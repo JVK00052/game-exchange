@@ -1,0 +1,13 @@
+.active {
+  background-color: rgb(105, 105, 105) !important;
+  color: white;
+}
+nav {
+  font-family: 'Special Elite', cursive;
+  font-size: 30px;
+}
+
+.nav-link {
+  background-color: silver;
+  color: black;
+}
