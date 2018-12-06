@@ -11,3 +11,24 @@ nav {
   background-color: silver;
   color: black;
 }
+
+#contact {
+  margin-top: 100px;
+}
+
+.contactus {
+  text-align: center;
+  width: 30em;
+  margin: auto;
+  margin-top: 4em;
+  font-size: 30px;
+}
+
+.sendemail {
+  background-color: blue;
+  color: white;
+}
+
+.edit {
+  background-color: red !important;
+}
