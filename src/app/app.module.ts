@@ -32,7 +32,7 @@ import { NavComponent } from './nav/nav.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

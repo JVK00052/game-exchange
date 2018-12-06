@@ -1,4 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
 body {
+    background: url('../src/assets/white-1809005_960_720.jpg') no-repeat center;
     font-family: 'Rajdhani', sans-serif;
+    background-size: cover;
 }
+
+.font {
+    color: black;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
