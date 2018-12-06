@@ -11,3 +11,34 @@ nav {
   background-color: silver;
   color: black;
 }
+
+.mat-card {
+  max-width: 400px;
+  display: inline-block;
+  margin: 1em 1em 1em 1em
+}
+
+.deck {
+  text-align: center;
+}
+
+.cartbutton {
+  float: right;
+  background-color: rgb(255, 255, 255, 0.582);
+  color: black;
+}
+
+.card {
+  background-color: rgba(133, 85, 23, 0.582);
+  color: white;
+}
+
+form {
+  margin-left: 3em;
+  margin-top: 3em;
+}
+
+.searchbutton {
+  background-color: rgba(133, 85, 23);
+  color: white;
+}

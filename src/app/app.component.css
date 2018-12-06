@@ -1,11 +1,3 @@
-body {
-    background: url('../assets/white-1809005_960_720.jpg') no-repeat;
-    background-size: cover;
-    height: 95vh;
-    width: 97vw;
-    padding: .45em;
-}
-
 .font {
     color: black;
     font-size: 20px;

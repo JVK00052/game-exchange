@@ -27,6 +27,55 @@
     </ul>
   </nav>
 </header>
-<p>
-  contact works!
-</p>
+<div class="contactus">
+  Costumer support is very important to us. Please feel free to contact us for any questions, comments, or concerns that you have. 
+  Also let us know if we are out of a product or we don't carry a product that you are interested in. Thank you!
+  <mat-card-actions>
+    <button mat-button class="edit">Edit</button>
+  </mat-card-actions>
+</div>
+<section id="contact">
+  <div class="container-fluid">
+    <h2 class="text-center text-uppercase">Contact Nail'd It</h2>
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <form action="https://formspree.io/coryc.vector@gmail.com" method="POST">
+          <div class="control-group">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" id="name" required
+                data-validation-required-message="Please enter your name" name="name">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" id="email" required
+                data-validation-required-message="Please enter your email" name="_replyto">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group">
+              <input type="number" class="form-control" placeholder="Your Phone Number" id="phone" name="number">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group">
+              <textarea class="form-control" rows="7" placeholder="Your Message" id="message" required
+                data-validation-required-message="Please leave a message" name="message"></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="text-center">
+            <div id="success"></div>
+            <button type="submit" class="btn btn-lg btn-black sendemail">
+              <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
