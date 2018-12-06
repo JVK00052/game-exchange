@@ -11,3 +11,6 @@ nav {
   background-color: silver;
   color: black;
 }
+.carousel-inner {
+  height: 500px;
+}

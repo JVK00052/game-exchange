@@ -11,3 +11,10 @@ nav {
   background-color: silver;
   color: black;
 }
+
+#faq {
+  overflow: hidden;
+  width: 100px;
+  margin-left: 700px;
+  border-radius: 2em;
+}

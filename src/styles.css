@@ -1,12 +1,12 @@
-/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
-
-/* You can add global styles to this file, and also import other style files */
 body {
+    background: url('../src/assets/white-1809005_960_720.jpg') no-repeat center;
     font-family: 'Rajdhani', sans-serif;
-    background: url('./assets/white-1809005_960_720.jpg') no-repeat;
     background-size: cover;
-    height: 95vh;
-    width: 97vw;
-    padding: .45em;
-    width: 100vw;
 }
+
+.font {
+    color: black;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
