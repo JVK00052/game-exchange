@@ -1,5 +1,5 @@
 body {
-    background: url('../src/assets/white-1809005_960_720.jpg') no-repeat center;
+    background: url('../src/assets/white-1809005_960_720.jpg') fixed no-repeat center;
     font-family: 'Rajdhani', sans-serif;
     background-size: cover;
 }
@@ -7,6 +7,5 @@ body {
 .font {
     color: black;
     font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.3);
+    margin: 5em 20em 5em 20em;
 }
-

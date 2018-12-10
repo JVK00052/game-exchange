@@ -12,12 +12,6 @@ nav {
   color: black;
 }
 
-.mat-card {
-  max-width: 400px;
-  display: inline-block;
-  margin: 1em 1em 1em 1em
-}
-
 .deck {
   text-align: center;
 }
@@ -28,7 +22,10 @@ nav {
   color: black;
 }
 
-.card {
+.card {  
+  max-width: 400px;
+  display: inline-block;
+  margin: 1em 1em 1em 1em;
   background-color: rgba(133, 85, 23, 0.582);
   color: white;
 }
@@ -41,4 +38,10 @@ form {
 .searchbutton {
   background-color: rgba(133, 85, 23);
   color: white;
+}
+
+.edit {
+  float: right;
+  background-color: red;
+  color: black;
 }

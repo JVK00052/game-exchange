@@ -22,7 +22,7 @@
         <a class="nav-link" routerLink="/cart">Cart</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/auth">Logout</a>
+        <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
     </ul>
   </nav>
@@ -32,13 +32,16 @@
     <input matInput placeholder="Search for something">
   </mat-form-field>
   <mat-card-actions>
-    <button mat-button class="searchbutton">Search</button>
+    <button mat-raised-button class="searchbutton">Search</button>
   </mat-card-actions>
 </form>
 <div class="deck">
   <mat-card class="card">
+    <mat-card-actions>
+      <button mat-raised-button class="edit">Edit</button>
+    </mat-card-actions>
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
+      <div mat-card-avatar class="image"></div>
       <mat-card-title>Bolts</mat-card-title>
       <mat-card-subtitle>bolt</mat-card-subtitle>
     </mat-card-header>
@@ -50,7 +53,7 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button class="cartbutton">Add to Cart</button>
+      <button mat-raised-button class="cartbutton">Add to Cart</button>
     </mat-card-actions>
   </mat-card>
 </div>

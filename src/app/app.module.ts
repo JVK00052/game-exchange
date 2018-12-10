@@ -10,9 +10,9 @@ import { HelpFaqComponent } from './help-faq/help-faq.component';
 import { AuthComponent } from './auth/auth.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
-import { LoginSignupComponent } from './login-signup/login-signup.component';
-import { NavComponent } from './nav/nav.component';
-import { MaterialModule } from './material.module'
+import { MaterialModule } from './material.module';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component'
 
 
 @NgModule({
@@ -25,8 +25,8 @@ import { MaterialModule } from './material.module'
     AuthComponent,
     ProfileComponent,
     CartComponent,
-    LoginSignupComponent,
-    NavComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
