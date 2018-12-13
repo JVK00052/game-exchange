@@ -3,15 +3,19 @@ Is a sudo storefront project that was designed to simulate a customer's shopping
 
 ## Functions and Capabilities of Nail'd It
 
-This application has many functions and capabi
+This application handles many web development processes such as Admin vs User roles, data base associations, and full c.r.u.d acessibility.
 
-## Code scaffolding
+## Resources 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+JSON Web Token for Authenticated Users - [Jason Watmore] {http://jasonwatmore.com/post/2018/11/22/angular-7-role-based-authorization-tutorial-with-example)
 
-## Build
+Association Learning:
+http://docs.sequelizejs.com/manual/tutorial/associations.html
+https://lorenstewart.me/2016/09/12/sequelize-table-associations-joins/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## How to use this Application on the web
+
+Run the app
 
 ## Running unit tests
 
