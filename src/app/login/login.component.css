@@ -62,3 +62,7 @@
   a:visited {
     color: white;
   }
+
+  .username {
+    font-size: 30px;
+  }

@@ -9,7 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HelpFaqComponent } from './help-faq/help-faq.component';
 import { AuthComponent } from './auth/auth.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CartComponent } from './cart/cart.component';
+import { CartComponent, CartDialog } from './cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component'
@@ -26,14 +26,16 @@ import { SignupComponent } from './signup/signup.component'
     ProfileComponent,
     CartComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CartDialog
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
+  entryComponents: [CartDialog],
   providers: [],
   bootstrap: [AppComponent]
 })

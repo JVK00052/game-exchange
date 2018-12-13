@@ -38,3 +38,9 @@ img {
   background-color: rgba(133, 85, 23, 0.582);
   color: white;
 }
+
+#dialog {
+  background: url(../../assets/light-wood-texture.jpg);
+  text-align: center;
+  padding: 20px;
+}
