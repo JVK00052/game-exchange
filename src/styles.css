@@ -3,3 +3,17 @@ body {
     font-family: 'Rajdhani', sans-serif;
     background-size: cover;
 }
+
+.font {
+    color: black;
+    font-size: 20px;
+    margin: 0em 20em 0em 20em;
+}
+
+input {
+    font-size: 20px !important;
+}
+
+.full-dialog .mat-dialog-container {
+    padding: 0px;
+}

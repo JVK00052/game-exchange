@@ -38,35 +38,7 @@
       Price
     </mat-card-content>
     <mat-card-actions class="buttons">
-      <button mat-raised-button class="purchase">Purchase</button>
-      <button mat-raised-button class="cartremove">Remove from cart</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card class="card">
-    <mat-card-header>
-      <div mat-card-avatar class="image"></div>
-      <mat-card-title>Bolts</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="#" alt="Photo of a bolts">
-    <mat-card-content>
-      Price
-    </mat-card-content>
-    <mat-card-actions class="buttons">
-      <button mat-raised-button class="purchase">Purchase</button>
-      <button mat-raised-button class="cartremove">Remove from cart</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card class="card">
-    <mat-card-header>
-      <div mat-card-avatar class="image"></div>
-      <mat-card-title>Bolts</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="#" alt="Photo of a bolts">
-    <mat-card-content>
-      Price
-    </mat-card-content>
-    <mat-card-actions class="buttons">
-      <button mat-raised-button class="purchase">Purchase</button>
+      <button mat-raised-button (click)="openDialog()" class="purchase">Purchase</button>
       <button mat-raised-button class="cartremove">Remove from cart</button>
     </mat-card-actions>
   </mat-card>
