@@ -12,6 +12,15 @@ nav {
   /* background-color: silver; */
   color: black;
 }
+
+h1 {
+  font-size: 40px;
+  font-style: bold;
+}
+h3 {
+  font-size: 22px;
+}
+
 .carousel-inner {
   height: 500px;
 }
