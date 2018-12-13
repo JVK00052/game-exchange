@@ -7,7 +7,7 @@ This application handles many web development processes such as Admin vs User ro
 
 ## Resources 
 
-JSON Web Token for Authenticated Users - [Jason Watmore] {http://jasonwatmore.com/post/2018/11/22/angular-7-role-based-authorization-tutorial-with-example)
+JSON Web Token for Authenticated Users - [Jason Watmore] (http://jasonwatmore.com/post/2018/11/22/angular-7-role-based-authorization-tutorial-with-example)
 
 Association Learning:
 http://docs.sequelizejs.com/manual/tutorial/associations.html
