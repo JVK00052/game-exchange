@@ -115,3 +115,36 @@ label {
   padding-right: 5px;
   font-size: 20px;
 }
+
+.cc-grandparent {
+  padding: 10px;
+}
+
+.cc-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.companyPicker {
+  width: 100%;
+}
+
+.mat-radio-button {
+  margin: 0 10px;
+}
+
+.mat-form-field {
+  font-size: 20px;
+}
+
+.mat-form-field input {
+  font-size: 15px;
+}
+
+.mat-radio-button {
+  font-size: 15px;
+}
+
+.dialogButtons {
+  text-align: center;
+}

@@ -54,6 +54,6 @@
   <button mat-raised-button [matMenuTriggerFor]="menu">Account Settings</button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item>Edit Account</button>
-    <button mat-menu-item>Delete Account</button>
+    <button mat-menu-item (click)="openDialog()">Credit Card Information</button>
   </mat-menu>
 </body>
