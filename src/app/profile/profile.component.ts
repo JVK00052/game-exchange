@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Inject, OnInit, Component } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 
 export interface DialogData { }
@@ -9,7 +9,7 @@ export interface DialogData { }
   styleUrls: ['./profile.component.css']
 })
 
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
@@ -18,7 +18,28 @@ export class ProfileComponent {
       disableClose: true,
       panelClass: 'full-dialog' });
     }
+
+  createDialog() {
+    this.dialog.open(CCDialog, {
+      disableClose: true,
+      panelClass: 'full-dialog'
+    });
   }
+  ngOnInit() {
+  }
+}
+@Component({
+  selector: 'profile-dialog',
+  templateUrl: './profile-dialog.html',
+  styleUrls: ['./profile.component.css']
+})
+
+export class ProfileDialog {
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    
+  }
+}
 
   @Component({
     selector: 'account.dialog',
@@ -30,4 +51,3 @@ export class ProfileComponent {
     constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
     
 }
-
