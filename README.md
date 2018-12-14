@@ -1,26 +1,26 @@
-## Table of Contents
+# Table of Contents
 0. [Prerequisites](#Prerequisites)
-1. [About this Application](##Nail'd It)
-2. [Functions of this Application](#Functions and Capabilities of Nail'd It)
+1. [About this Application](#About)
+2. [Functions of this Application](#Functionality)
 3. [Resources User](#Resources)
-4. [Running Hosted](#How to use this Application on the web)
-5. [Running Locally](#How to run this Application Locally)
-6. [Contact Me](#Conclusion)
+4. [Running Hosted](#Hosted)
+5. [Running Locally](#Locally)
+6. [Contact Me](#Contact)
 
-## Prerequisites
+# Prerequisites
 - Code Editor Used: [Visual Studio Code](https://code.visualstudio.com/download)
 - Server Program Used: [PostgreSQL](https://www.postgresql.org/download/)
 - Server Viewing Program Used: [pgAdmin](https://www.pgadmin.org/download/)
 - Server Testing Program Used: [Postman](https://www.getpostman.com/apps)
 
-## Nail'd It
+# About
 Is a sudo storefront project that was designed to simulate a customer's shopping experience for hardware store items. By signing up and becoming a member the user has the ability to shop and add items to their cart as they please. When users are ready to checkout, the user can purchase these items and their cart will be cleared of all items that were bought.This web application was built using JavaScript, Angular 7, Node.js, Html 5 and Css 3. This project was created in order to stimulate a real-life coding sprint, problem-solve as a team, define roles, and find the team's strengths and weaknesses. 
 
-## Functions and Capabilities of Nail'd It
+# Functionality 
 
 This application handles many web development processes such as Admin vs User roles, data base associations, and full c.r.u.d acessibility.
 
-## Resources 
+# Resources 
 
 - JSON Web Token for Authenticated Users - [Jason Watmore](http://jasonwatmore.com/post/2018/11/22/angular-7-role-based-authorization-tutorial-with-example)
 
@@ -28,8 +28,8 @@ This application handles many web development processes such as Admin vs User ro
 
 - Association Joining Learning - [Loren Stewart](https://lorenstewart.me/2016/09/12/sequelize-table-associations-joins/)
 
-## How to use this Application on the web
-
+# Hosted
+### How to run this application on the web
 1. Run the [App](<add heroku clientside url here).
 
 2. Navigate to the Signup Page.
@@ -40,7 +40,8 @@ This application handles many web development processes such as Admin vs User ro
 
 5. As an admin you will be able to create new products, delete existing products, and update any other products that exist in the database.
 
-## How to run this Application Locally
+# Locally
+### How to run this Application Locally
 
 1. Create a new folder in your prefered Code Editor
 
@@ -57,6 +58,9 @@ This application handles many web development processes such as Admin vs User ro
 
     - Press ```Y```. It asks you this because your backend-server is already running on Local Host Port:3000. This will start the frontend-server on Port:3001 so there is no conflict.
 
-## Conclusion
+# Contact
+### Have a question?
+### Have a request?
+### Report a problem or bug?
 
 Thank you for viewing this application. I hope you found this informative and instructive. Email me at JVK00052@gmail.com if you have any questions or problems.
