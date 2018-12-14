@@ -2,7 +2,10 @@
 - Code Editor Used: [Visual Studio Code](https://code.visualstudio.com/download)
 - Server Program Used: [PostgreSQL](https://www.postgresql.org/download/)
 - Server Viewing Program Used: [pgAdmin](https://www.pgadmin.org/download/)
-- Server Testing Program Used" [Postman](https://www.getpostman.com/apps)
+- Server Testing Program Used: [Postman](https://www.getpostman.com/apps)
+
+## Index
+
 ## Nail'd It
 Is a sudo storefront project that was designed to simulate a customer's shopping experience for hardware store items. By signing up and becoming a member the user has the ability to shop and add items to their cart as they please. When users are ready to checkout, the user can purchase these items and their cart will be cleared of all items that were bought.This web application was built using JavaScript, Angular 7, Node.js, Html 5 and Css 3. This project was created in order to stimulate a real-life coding sprint, problem-solve as a team, define roles, and find the team's strengths and weaknesses. 
 
@@ -47,11 +50,6 @@ This application handles many web development processes such as Admin vs User ro
 
     - Press ```Y```. It asks you this because your backend-server is already running on Local Host Port:3000. This will start the frontend-server on Port:3001 so there is no conflict.
 
+## Conclusion
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Thank you for viewing this application. I hope you found this informative and instructive. Email me at JVK00052@gmail.com if you have any questions or problems.
