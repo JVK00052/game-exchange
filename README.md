@@ -39,7 +39,7 @@ This application handles many web development processes such as Admin vs User ro
 ```
 This will update the current package.json and it's dependencies and add a folder named "node_modules", this will allow you to run the application smoothly.
 
-4. Now, in the same Code Editor terminal you CD'd into, run the command "ng serve -o". This will open a new window in your default browser with the clientside application running.
+4. Now, in the same Code Editor terminal you CD'd into, run the command ```ng serve -o```. This will open a new window in your default browser with the clientside application running.
 
 5. 
 
