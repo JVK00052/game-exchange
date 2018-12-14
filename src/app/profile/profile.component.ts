@@ -16,8 +16,15 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
 
+  createDialog() {
+    this.dialog.open(CCDialog, {
+      disableClose: true,
+      panelClass: 'full-dialog'
+    });
+  }
+
   openDialog() {
-    this.dialog.open(ProfileDialog, {
+    this.dialog.open(AccountDialog, {
       disableClose: true,
       panelClass: 'full-dialog'
     });
@@ -30,7 +37,14 @@ export class ProfileComponent implements OnInit {
   styleUrls: ['./profile.component.css']
 })
 
-export class ProfileDialog {
+export class CCDialog {
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    
+  }
+}
+
+export class AccountDialog {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
     
