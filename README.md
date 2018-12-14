@@ -1,14 +1,18 @@
+## Table of Contents
+0. [Prerequisites](#Prerequisites)
+1. [About this Application](#Nail'd It)
+2. [Functions of this Application](#Functions and Capabilities of Nail'd It)
+3. [Resources User](#Resources)
+4. [Running Hosted](#How to use this Application on the web)
+5. [Running Locally](#How to run this Application Locally)
+6. [Contact Me](#Conclusion)
+
 ## Prerequisites
 - Code Editor Used: [Visual Studio Code](https://code.visualstudio.com/download)
 - Server Program Used: [PostgreSQL](https://www.postgresql.org/download/)
 - Server Viewing Program Used: [pgAdmin](https://www.pgadmin.org/download/)
 - Server Testing Program Used: [Postman](https://www.getpostman.com/apps)
 
-## Index
-1. [About this Application](#Nail'dIt)
-2. [Functions of this Application](#FunctionsandCapabilitiesofNail'dIt)
-3. [Resources User](#Resources)
-4. [Running the App](#HowtousethisApplicationontheweb)
 ## Nail'd It
 Is a sudo storefront project that was designed to simulate a customer's shopping experience for hardware store items. By signing up and becoming a member the user has the ability to shop and add items to their cart as they please. When users are ready to checkout, the user can purchase these items and their cart will be cleared of all items that were bought.This web application was built using JavaScript, Angular 7, Node.js, Html 5 and Css 3. This project was created in order to stimulate a real-life coding sprint, problem-solve as a team, define roles, and find the team's strengths and weaknesses. 
 
