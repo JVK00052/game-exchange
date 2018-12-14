@@ -29,15 +29,19 @@ This application handles many web development processes such as Admin vs User ro
 
 1. Create a new folder in your prefered Code Editor
 
-2. Clone the "Nail'd It" Repository to the new folder you created
+2. Clone the "Nail'd It-Clientside" and "Nail'd It-Serverside" Repository to the new folder you created
 
-3. Within your Code Editor terminal, cd into the new folder and run the following commands:
+3. Within your Code Editor terminal, CD into the new folder and then CD into "Nail'd It-Clientside" and run the following commands:
+  ```
   - npm init
   - npm install
   - npm update
-This will update the current packages and add two folders named "node_modules" and package this will allow you to run the application smoothly.
+```
+This will update the current package.json and it's dependencies and add a folder named "node_modules", this will allow you to run the application smoothly.
 
-4. 
+4. Now, in the same Code Editor terminal you CD'd into, run the command "ng serve -o". This will open a new window in your default browser with the clientside application running.
+
+5. 
 
 ## Running end-to-end tests
 
