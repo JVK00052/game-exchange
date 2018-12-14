@@ -29,19 +29,21 @@ This application handles many web development processes such as Admin vs User ro
 
 1. Create a new folder in your prefered Code Editor
 
-2. Clone the "Nail'd It-Clientside" and "Nail'd It-Serverside" Repository to the new folder you created
+2. Clone the "nail-dit-clientside" and "nail-dit-serverside" Repository to the new folder you created
 
-3. Within your Code Editor terminal, CD into the new folder and then CD into "Nail'd It-Serverside" and run the following command```npm install```
+3. Within your Code Editor terminal, CD into the new folder and then CD into "nail-dit-serverside" and run the following command```npm install```. This will add the folder ```node_modules``` to your folder structure, this will allow the backend to run smoothly.
 
-4. Within your Code Editor terminal, CD into the new folder and then CD into "Nail'd It-Clientside" and run the following command```npm install```.
+4. In the same Code Editor terminal you CD'd into, run the command ```nodemon index.js```. This will run the server.
 
-5. Now, in the same Code Editor terminal you CD'd into, run the command ```nodemon index.js```. This will run the server
+5. Now, within your Code Editor terminal, CD into the new folder and then CD into "nail-dit-clientside" and run the following command```npm install```.
 
-6. Within your Code Editor terminal, CD into the new folder and then CD into "Nail'd It-Clientside" and run the following command```npm install```
-
-This will update the current package.json and it's dependencies and add a folder named "node_modules", this will allow you to run the application smoothly.
+This will update the current package.json and it's dependencies and add a folder named "node_modules", this will allow you to run the frontend smoothly.
 
 7. Now, in the same Code Editor terminal you CD'd into, run the command ```ng serve -o```. This will open a new window in your default browser with the clientside application running.
+  - Note! it may ask you the following within your terminal: ```? Something is already running on port 3000. Would you like to run the app on another port instead? (Y/n)```. 
+
+  - Press ```Y```. It asks you this because your backend-server is already running on Local Host Port:3000. This will start the frontend-server on Port:3001 so there is no conflict.
+
 
 ## Running end-to-end tests
 
