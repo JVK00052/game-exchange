@@ -8,7 +8,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpFaqComponent } from './help-faq/help-faq.component';
 import { AuthComponent } from './auth/auth.component';
-import { ProfileComponent, CCDialog } from './profile/profile.component';
+import { ProfileComponent, CCDialog, AccountDialog } from './profile/profile.component';
 import { CartComponent, CartDialog } from './cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './login/login.component';
@@ -30,6 +30,7 @@ import { SignupComponent } from './signup/signup.component'
     SignupComponent,
     CartDialog,
     CCDialog,
+    AccountDialog
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,8 @@ import { SignupComponent } from './signup/signup.component'
   ],
   entryComponents: [
     CartDialog,
-    CCDialog
+    CCDialog,
+    AccountDialog
   ],
   providers: [],
   bootstrap: [AppComponent]

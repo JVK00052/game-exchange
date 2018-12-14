@@ -13,8 +13,11 @@ export class ProfileComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  ngOnInit() {
-  }
+  openDialog() {
+    this.dialog.open(AccountDialog, {
+      disableClose: true,
+      panelClass: 'full-dialog' });
+    }
 
   createDialog() {
     this.dialog.open(CCDialog, {
@@ -22,15 +25,9 @@ export class ProfileComponent implements OnInit {
       panelClass: 'full-dialog'
     });
   }
-
-  openDialog() {
-    this.dialog.open(AccountDialog, {
-      disableClose: true,
-      panelClass: 'full-dialog'
-    });
+  ngOnInit() {
   }
 }
-
 @Component({
   selector: 'profile-dialog',
   templateUrl: './profile-dialog.html',
@@ -44,9 +41,13 @@ export class CCDialog {
   }
 }
 
-export class AccountDialog {
+  @Component({
+    selector: 'account.dialog',
+    templateUrl: './account.dialog.html',
+    styleUrls: ['./profile.component.css']
+  })
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  export class AccountDialog {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
     
-  }
 }
