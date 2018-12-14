@@ -14,11 +14,11 @@
 - Server Testing Program Used: [Postman](https://www.getpostman.com/apps)
 
 # About
-Is a sudo storefront project that was designed to simulate a customer's shopping experience for hardware store items. By signing up and becoming a member the user has the ability to shop and add items to their cart as they please. When users are ready to checkout, the user can purchase these items and their cart will be cleared of all items that were bought.This web application was built using JavaScript, Angular 7, Node.js, Html 5 and Css 3. This project was created in order to stimulate a real-life coding sprint, problem-solve as a team, define roles, and find the team's strengths and weaknesses. 
+Is a pseudo storefront project that was designed to simulate a customer's shopping experience for hardware store items. By signing up and becoming a member the user has the ability to shop and add items to their cart as they please. When users are ready to checkout, the user can purchase these items and their cart will be cleared of all items that were bought. This web application was built using JavaScript, Angular 7, Node.js, HTML 5 and CSS 3. This project was created in order to stimulate a real-life coding sprint, problem-solve as a team, define roles, and find the team's strengths and weaknesses. 
 
 # Functionality 
 
-This application handles many web development processes such as Admin vs User roles, data base associations, and full c.r.u.d acessibility.
+This application handles many web development processes such as Admin vs User roles, data base associations, and full C.R.U.D. acessibility.
 
 # Resources 
 
@@ -43,7 +43,7 @@ This application handles many web development processes such as Admin vs User ro
 # Locally
 ### How to run this Application Locally
 
-1. Create a new folder in your prefered Code Editor
+1. Create a new folder in your preferred Code Editor
 
 2. Clone the "nail-dit-clientside" and "nail-dit-serverside" Repository to the new folder you created
 
