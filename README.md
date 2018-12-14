@@ -2,7 +2,7 @@
 0. [Prerequisites](#Prerequisites)
 1. [About this Application](#About)
 2. [Functions of this Application](#Functionality)
-3. [Resources User](#Resources)
+3. [Resources Used](#Resources)
 4. [Running Hosted](#Hosted)
 5. [Running Locally](#Locally)
 6. [Contact Me](#Contact)
