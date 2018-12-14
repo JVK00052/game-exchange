@@ -18,7 +18,7 @@ Is a pseudo storefront project that was designed to simulate a customer's shoppi
 
 # Functionality 
 
-This application handles many web development processes such as Admin vs User roles, data base associations, and full C.R.U.D. acessibility.
+This application handles many web development processes such as Admin vs User roles, database associations, and full C.R.U.D. acessibility.
 
 # Resources 
 
@@ -45,7 +45,7 @@ This application handles many web development processes such as Admin vs User ro
 
 1. Create a new folder in your preferred Code Editor
 
-2. Clone the "nail-dit-clientside" and "nail-dit-serverside" Repository to the new folder you created
+2. Clone the [Nail'd It-Clientside](https://github.com/JVK00052/nail-dit-clientside) and [Nail'd It-Serverside](https://github.com/JVK00052/nail-dit-serverside) Repository to the new folder you created
 
 3. Within your Code Editor terminal, CD into the new folder and then CD into "nail-dit-serverside" and run the following command```npm install```. This will add the folder ```node_modules``` to your folder structure, this will allow the backend to run smoothly.
 
@@ -57,6 +57,13 @@ This application handles many web development processes such as Admin vs User ro
     - Note! it may ask you the following within your terminal: ```? Something is already running on port 3000. Would you like to run the app on another port instead? (Y/n)```. 
 
     - Press ```Y```. It asks you this because your backend-server is already running on Local Host Port:3000. This will start the frontend-server on Port:3001 so there is no conflict.
+    
+# Tutorials
+### Setting up admin vs user roles
+
+### Creating Products, Profiles, and Payments
+
+### Signing up vs Logging in
 
 # Contact
 ### Have a question?
