@@ -1,6 +1,6 @@
 ## Table of Contents
 0. [Prerequisites](#Prerequisites)
-1. [About this Application](#Nail'd It)
+1. [About this Application](#Nail'dIt)
 2. [Functions of this Application](#Functions and Capabilities of Nail'd It)
 3. [Resources User](#Resources)
 4. [Running Hosted](#How to use this Application on the web)
