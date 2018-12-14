@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
   styleUrls: ['./profile.component.css']
 })
 
-export class ProfileDialog {
+export class CCDialog {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
     
