@@ -47,3 +47,18 @@ form {
   background-color: red;
   color: black;
 }
+
+.delete {
+  float: right;
+  background-color: yellow;
+}
+
+.admin-use {
+  text-align: right;
+  margin-top: -18em;
+  margin-right: 5em;
+}
+
+.add {
+  background-color: blue;
+}

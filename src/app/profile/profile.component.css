@@ -21,7 +21,7 @@ body{
 
 .profile-card {
   background: #FFFAF0;
-  padding: 7em;
+  padding: 4em;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -108,10 +108,15 @@ div.form-example {
 
 label, input {
   /* display: table-cell; */
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 label {
   padding-right: 5px;
   font-size: 20px;
 }
+
+/* .dialog {
+  display: flex;
+  flex-direction: column;
+} */
