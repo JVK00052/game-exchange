@@ -1,0 +1,48 @@
+<!-- <mat-card>
+  <form>
+          <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="User name" [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
+      </mat-form-field>
+
+      <mat-slide-toggle color="primary" [checked]="false" [disabled]="true" [(ngModel)]="isAdmin" name="isAdmin">
+          Administrator
+      </mat-slide-toggle>
+
+      <mat-card-actions>
+          <button mat-raised-button (click)="login(username, password, isAdmin)">Register</button>
+      </mat-card-actions>
+  </form>
+</mat-card> -->
+
+<div class="grandparentcontainer">
+  <div class="parentContainer">
+    <div>
+      <form class="loginForm">
+        <h2>LOGIN</h2>
+        <div class="form-group">
+          <label for="username" class="col-sm-3 control-label">Username</label>
+          <div class="col-sm-9">
+            <input id="username" placeholder="Username" [(ngModel)]="username" name="username" required class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-3 control-label">Password</label>
+          <div class="col-sm-9">
+            <input type="password" id="password" placeholder="Password" [(ngModel)]="password" name="password" required class="form-control password">
+          </div>
+        </div>
+        <mat-card-actions>
+          <button mat-raised-button class="loginbutton">Login</button>
+        </mat-card-actions>
+        <span class="help-block">Don't have an account yet? <a routerLink='/signup'>Signup here.</a></span>
+        <span class="back2home"><a routerLink='/'>Or click here to go back to the homepage.</a></span>
+      </form>
+    </div>
+  </div>
+</div>

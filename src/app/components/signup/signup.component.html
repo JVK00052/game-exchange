@@ -1,0 +1,48 @@
+<!-- <mat-card>
+  <form>
+          <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="User name" [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
+      </mat-form-field>
+
+      <mat-slide-toggle color="primary" [checked]="false" [disabled]="true" [(ngModel)]="isAdmin" name="isAdmin">
+          Administrator
+      </mat-slide-toggle>
+
+      <mat-card-actions>
+          <button mat-raised-button (click)="signup(username, password, isAdmin)">Register</button>
+      </mat-card-actions>
+  </form>
+</mat-card> -->
+
+<div class="grandparentcontainer">
+  <div class="parentContainer">
+    <div>
+      <form class="signupForm">
+        <h2>SIGNUP</h2>
+        <div class="form-group">
+          <label for="username" class="col-sm-3 control-label">Username</label>
+          <div class="col-sm-9">
+            <input matInput id="username" name="username" placeholder="Username" [(ngModel)]="username" name="username" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-3 control-label">Password</label>
+          <div class="col-sm-9">
+            <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" name="password" class="form-control password" required>
+          </div>
+        </div>
+        <mat-card-actions>
+          <button mat-raised-button class="signupbutton" (click)="signup(username, password, isAdmin)">Signup</button>
+        </mat-card-actions>
+        <span class="help-block">Already have an account? <a routerLink='/login'>Login here.</a></span>
+        <span class="back2home"><a routerLink='/'>Or click here to go back to the homepage.</a></span>
+      </form>
+    </div>
+  </div>
+</div>
