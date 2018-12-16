@@ -18,6 +18,7 @@ import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { FormsModule } from '@angular/forms';
     HttpClient,
     UserService,
     AuthService,
+    AuthGuard,
     ProductsService
   ],
   entryComponents: [
