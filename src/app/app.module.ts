@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     HomeComponent,
     ShopComponent,
@@ -33,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     CartDialog,
     CCDialog,
-    AccountDialog
+    AccountDialog 
   ],
   imports: [
     HttpClientModule,
@@ -47,7 +48,8 @@ import { FormsModule } from '@angular/forms';
   providers: [
     HttpClient,
     UserService,
-    AuthService
+    AuthService,
+    ProductsService
   ],
   entryComponents: [
     CartDialog,
