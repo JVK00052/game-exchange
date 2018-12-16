@@ -13,8 +13,7 @@ import { CartComponent, CartDialog } from './cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component'
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +32,7 @@ import { SignupComponent } from './signup/signup.component'
     AccountDialog
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
