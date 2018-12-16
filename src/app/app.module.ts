@@ -17,10 +17,12 @@ import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth.guard';
+import { ProductsService } from './services/products.service';
 
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     HomeComponent,
     ShopComponent,
@@ -33,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     CartDialog,
     CCDialog,
-    AccountDialog
+    AccountDialog 
   ],
   imports: [
     HttpClientModule,
@@ -47,7 +49,9 @@ import { FormsModule } from '@angular/forms';
   providers: [
     HttpClient,
     UserService,
-    AuthService
+    AuthService,
+    AuthGuard,
+    ProductsService
   ],
   entryComponents: [
     CartDialog,
