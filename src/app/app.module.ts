@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,7 @@ import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     HomeComponent,
     ShopComponent,
@@ -34,7 +35,7 @@ import { AuthGuard } from './guards/auth.guard';
     SignupComponent,
     CartDialog,
     CCDialog,
-    AccountDialog
+    AccountDialog 
   ],
   imports: [
     HttpClientModule,
@@ -49,7 +50,8 @@ import { AuthGuard } from './guards/auth.guard';
     HttpClient,
     UserService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    ProductsService
   ],
   entryComponents: [
     CartDialog,
