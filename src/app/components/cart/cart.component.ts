@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 
 export interface DialogData { }
@@ -9,13 +9,17 @@ export interface DialogData { }
   styleUrls: ['./cart.component.css']
 })
 
-export class CartComponent {
+export class CartComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
+
+  ngOnInit() {
+  }
 
   openDialog() {
     this.dialog.open(CartDialog, {
       disableClose: true,
-      panelClass: 'full-dialog' });
+      panelClass: 'full-dialog'
+    });
   }
 }
 
@@ -27,5 +31,4 @@ export class CartComponent {
 
 export class CartDialog {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-
 }

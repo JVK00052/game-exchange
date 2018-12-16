@@ -18,6 +18,7 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,9 @@ import { FormsModule } from '@angular/forms';
     CartComponent,
     LoginComponent,
     SignupComponent,
-    CartDialog
+    CartDialog,
+    CCDialog,
+    AccountDialog
   ],
   imports: [
     BrowserModule,
@@ -40,8 +43,16 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     HttpClientModule
   ],
-  entryComponents: [CartDialog],
-  providers: [HttpClient, UserService, AuthService],
+  providers: [
+    HttpClient,
+    UserService,
+    AuthService
+  ],
+  entryComponents: [
+    CartDialog,
+    CCDialog,
+    AccountDialog
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
