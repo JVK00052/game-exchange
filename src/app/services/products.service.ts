@@ -9,8 +9,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(data) {
-    return this.http.get(`https://naildit-serverside.herokuapp.com/shop/${data}`)
+  getProducts() {
+    return this.http.get(`https://naildit-serverside.herokuapp.com/`)
   }
-
 }
