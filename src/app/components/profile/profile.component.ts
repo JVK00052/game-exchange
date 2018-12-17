@@ -11,6 +11,7 @@ export interface DialogData { }
 
 export class ProfileComponent implements OnInit {
 
+
   constructor(public dialog: MatDialog) { }
 
   openDialog() {
@@ -27,6 +28,7 @@ export class ProfileComponent implements OnInit {
   }
   ngOnInit() {
   }
+
 }
 @Component({
   selector: 'profile-dialog',

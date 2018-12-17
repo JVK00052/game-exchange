@@ -1,6 +1,6 @@
 <div class="dialog">
   <form class="example-form">
-    <h1 mat-dialog-title>Edit </h1>
+    <h1 mat-dialog-title> </h1>
     <div class="name">
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Name" value="">
@@ -27,7 +27,9 @@
 
     <div class="buttons">
       <button mat-raised-button mat-dialog-close>Cancel</button>
-      <button mat-raised-button mat-dialog-close>Confirm Changes</button>
+      <button mat-raised-button (click)="onClick()">Confirm Changes</button>
     </div>
   </form>
 </div>
+
+

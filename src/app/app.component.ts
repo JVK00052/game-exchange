@@ -8,16 +8,16 @@ import { ProductsService } from './services/products.service';
 })
 export class AppComponent implements OnInit {
   // title = "Nail'd It";
-  prodData: any;
-  cart = []
+  data: any;
+  product: []
 
   constructor( private products: ProductsService){}
 
     ngOnInit(){
-      this.products.getProducts()
+      this.product.getProducts()
       .subscribe((res:any) => {
-        this.prodData = res.products;
-        console.log('this.proddata', this.prodData);
+        this.data = res.product;
+        console.log('this.data', this.data);
       })
     }
   }
