@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../services/shop.service';
 import { Product } from '../../models/product'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-shop',
@@ -8,6 +10,7 @@ import { Product } from '../../models/product'
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
+
   product: any=[];
   nameOfProduct: string;
   typeOfProduct: string;
@@ -15,7 +18,7 @@ export class ShopComponent implements OnInit {
   priceOfProduct: string;
   quantity: string;
 
-  constructor(private shopservice: ShopService) { }
+constructor(private shopservice: ShopService) { }
 
   ngOnInit() {
    this.getproduct();
@@ -42,7 +45,14 @@ export class ShopComponent implements OnInit {
       this.getproduct();
     }
   }
+
   createProduct(): void {
     this.shopservice.createProduct(this.nameOfProduct, this.typeOfProduct, this.companyName, this.priceOfProduct, this.quantity)
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+    window.alert('You have been logged out.')
   }
 }

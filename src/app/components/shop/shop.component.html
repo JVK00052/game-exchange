@@ -24,6 +24,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
+      <li class="nav-item">
+        <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
+      </li>
     </ul>
   </nav>
 </header>
@@ -37,41 +40,47 @@
   </mat-card-actions>
 </form>
 
-<mat-card-actions> -->
-    <!-- <div *ngIf="isAdmin !== false">
+<mat-card-actions>
+  <!-- <div *ngIf="isAdmin !== false">
         <button (click)="add(product)" style="width: 70px; text-align: center;">ADD</button>
       </div> -->
-    <!-- <div class="admin-use">
-      <button mat-raised-button class="add">Add</button>
-    </div>
-    </mat-card-actions>
+  <div class="admin-use">
+    <button mat-raised-button class="add">Add</button>
+  </div>
+</mat-card-actions>
 
 <div class="deck">
-  <mat-card class="card">
+  <mat-card class="card" *ngFor="let p of products">
     <mat-card-actions>
-    
       <button mat-raised-button class="edit">Edit</button>
       <button mat-raised-button class="delete">Delete</button>
     </mat-card-actions>
     <mat-card-header>
-      <div mat-card-avatar class="image"></div>
-      <li  *ngFor="let p of Products">    
+      <!-- <li  >     -->
+      <!-- original layout
+        <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
+      <mat-card-subtitle>{{p.companyName}}</mat-card-subtitle>
+      {{p.priceOfProduct}}price 
+          {{p.quantity}}  quantity
+    </mat-card-header> -->
       <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
       <mat-card-subtitle>{{p.companyName}}</mat-card-subtitle>
-      {{p.priceOfProduct}}
-          {{p.quantity}}  
     </mat-card-header>
-    <img mat-card-image src="#" alt="Photo of a bolts">
     <mat-card-content>
-      <p>
-        BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS
-        BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS
-      </p>
+      <div class="priceandquantity">
+        <div class="price">
+          {{p.priceOfProduct}}
+        </div>
+        <div class="quantity">
+          {{p.quantity}}
+        </div>
+      </div>
     </mat-card-content>
-    <mat-card-actions>   
+    <mat-card-actions>
       <button mat-raised-button class="cartbutton">Add to Cart</button>
     </mat-card-actions>
   </mat-card>
+
 </div> -->
 <h2>Products</h2>
 <ul>
@@ -85,3 +94,4 @@
     <hr />
   </li>
 </ul>
+

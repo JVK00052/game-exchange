@@ -45,7 +45,6 @@ form {
 .edit {
   float: right;
   background-color: red;
-  color: black;
 }
 
 .delete {
@@ -55,10 +54,19 @@ form {
 
 .admin-use {
   text-align: right;
-  margin-top: -18em;
+  margin-top: -10em;
   margin-right: 5em;
 }
 
 .add {
   background-color: blue;
+  color: white;
+}
+
+.mat-card-title {
+  text-align: left;
+}
+
+.priceandquantity {
+  text-align: right;
 }
