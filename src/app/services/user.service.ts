@@ -36,6 +36,7 @@ export class UserService {
 
           localStorage.setItem('token', user.sessionToken);
           console.log(user)
+          console.log(isAdmin)
           console.log('You have hit this endpoint')
         }
         return user;
