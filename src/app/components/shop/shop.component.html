@@ -28,7 +28,7 @@
   </nav>
 </header>
 
-<form class="form">
+<!-- <form class="form">
   <mat-form-field class="full-width">
     <input matInput placeholder="Search for something">
   </mat-form-field>
@@ -37,11 +37,11 @@
   </mat-card-actions>
 </form>
 
-<mat-card-actions>
+<mat-card-actions> -->
     <!-- <div *ngIf="isAdmin !== false">
         <button (click)="add(product)" style="width: 70px; text-align: center;">ADD</button>
       </div> -->
-    <div class="admin-use">
+    <!-- <div class="admin-use">
       <button mat-raised-button class="add">Add</button>
     </div>
     </mat-card-actions>
@@ -72,4 +72,16 @@
       <button mat-raised-button class="cartbutton">Add to Cart</button>
     </mat-card-actions>
   </mat-card>
-</div>
+</div> -->
+<h2>Products</h2>
+<ul>
+  <li *ngFor="let p of product.product">
+    {{ p.nameOfProduct }}
+    {{ p.typeOfProduct }}
+    {{ p.priceOfProduct }}
+    {{ p.companyName }}
+    {{ p.quantity }}
+    <button (click)="delete(p.id)">Delete</button>
+    <hr />
+  </li>
+</ul>

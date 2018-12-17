@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../services/shop.service';
-import { Products } from '../../models/products';
+import { Product } from '../../models/product'
 
 @Component({
   selector: 'app-shop',
@@ -8,40 +8,41 @@ import { Products } from '../../models/products';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  products: any=[];
+  product: any=[];
   nameOfProduct: string;
   typeOfProduct: string;
   companyName: string;
   priceOfProduct: string;
   quantity: string;
+
   constructor(private shopservice: ShopService) { }
 
   ngOnInit() {
-   this.getProducts();
+   this.getproduct();
 
   }
-  getProducts(): void {
-    this.products =[];
-    this.shopservice.getProducts(this.products.id).subscribe((data: any)=> {
+  getproduct() {
+    this.product = [];
+    this.shopservice.getProduct(this.product.id).subscribe((data: any) => {
       console.log(data)
-      this.products = data
+      this.product = data
     })
   }
-  deleteProducts(products: Products): void {
+  deleteProduct(product: Product): void {
     if (localStorage.getItem('token')) {
-      this.shopservice.deleteProducts(products).subscribe((products: any) => console.log(products))
-      this.getProducts();
+      this.shopservice.deleteProduct(product).subscribe((product: any) => console.log(product))
+      this.getproduct();
     } else {
       console.log('Not an authorized user.')
     }
   }
-  editProducts(products: Products): void {
+  editProduct(product: Product): void {
     if (localStorage.getItem('token')) {
-      this.shopservice.editProducts(products).subscribe((products: Products) => console.log(products))
-      this.getProducts();
+      this.shopservice.editProduct(product).subscribe((product: Product) => console.log(product))
+      this.getproduct();
     }
   }
   createProduct(): void {
-    this.shopservice.createProducts(this.nameOfProduct, this.typeOfProduct, this.companyName, this.priceOfProduct, this.quantity)
+    this.shopservice.createProduct(this.nameOfProduct, this.typeOfProduct, this.companyName, this.priceOfProduct, this.quantity)
   }
 }
