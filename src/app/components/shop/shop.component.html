@@ -31,7 +31,7 @@
   </nav>
 </header>
 
-<form class="form">
+<!-- <form class="form">
   <mat-form-field class="full-width">
     <input matInput placeholder="Search for something">
   </mat-form-field>
@@ -80,4 +80,18 @@
       <button mat-raised-button class="cartbutton">Add to Cart</button>
     </mat-card-actions>
   </mat-card>
-</div>
+
+</div> -->
+<h2>Products</h2>
+<ul>
+  <li *ngFor="let p of product.product">
+    {{ p.nameOfProduct }}
+    {{ p.typeOfProduct }}
+    {{ p.priceOfProduct }}
+    {{ p.companyName }}
+    {{ p.quantity }}
+    <button (click)="delete(p.id)">Delete</button>
+    <hr />
+  </li>
+</ul>
+
