@@ -6,12 +6,13 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "serve -s dist/naild-it",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --prod",
+    "start": "serve -s dist/naild-it"
   },
   "private": true,
   "dependencies": {
