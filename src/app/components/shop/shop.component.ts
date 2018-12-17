@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../services/shop.service';
 import { Products } from '../../models/products';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -8,25 +9,23 @@ import { Products } from '../../models/products';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  products: any=[];
+  products: any = [];
   nameOfProduct: string;
   typeOfProduct: string;
   companyName: string;
   priceOfProduct: string;
   quantity: string;
-  constructor(private shopservice: ShopService) { }
+  constructor(private shopservice: ShopService, private router: Router) { }
 
   ngOnInit() {
-   this.getProducts();
+    this.getProducts();
+  }
 
-  }
   getProducts(): void {
-    this.products =[];
-    this.shopservice.getProducts(this.products.id).subscribe((data: any)=> {
-      console.log(data)
-      this.products = data
-    })
+    this.products = [];
+    this.shopservice.getProducts(this.products.id).subscribe((data: any) => data.result)
   }
+
   deleteProducts(products: Products): void {
     if (localStorage.getItem('token')) {
       this.shopservice.deleteProducts(products).subscribe((products: any) => console.log(products))
@@ -41,7 +40,14 @@ export class ShopComponent implements OnInit {
       this.getProducts();
     }
   }
+
   createProduct(): void {
     this.shopservice.createProducts(this.nameOfProduct, this.typeOfProduct, this.companyName, this.priceOfProduct, this.quantity)
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+    window.alert('You have been logged out.')
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-help-faq',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpFaqComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+  
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+    window.alert('You have been logged out.')
+  }
+
 
 }
