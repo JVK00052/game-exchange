@@ -31,7 +31,7 @@
   </nav>
 </header>
 
-<!-- <form class="form">
+<form class="form">
   <mat-form-field class="full-width">
     <input matInput placeholder="Search for something">
   </mat-form-field>
@@ -39,30 +39,16 @@
     <button mat-raised-button class="searchbutton">Search</button>
   </mat-card-actions>
 </form>
-
-<mat-card-actions>
-  <!-- <div *ngIf="isAdmin !== false">
-        <button (click)="add(product)" style="width: 70px; text-align: center;">ADD</button>
-      </div> -->
-  <div class="admin-use">
-    <button mat-raised-button class="add">Add</button>
-  </div>
-</mat-card-actions>
-
+<div class="admin-use">
+  <button mat-raised-button class="add">Add</button>
+</div>
 <div class="deck">
-  <mat-card class="card" *ngFor="let p of products">
-    <mat-card-actions>
+  <mat-card class="card" *ngFor="let p of product.product">
+    <mat-card-actions class="adminbuttons">
       <button mat-raised-button class="edit">Edit</button>
       <button mat-raised-button class="delete">Delete</button>
     </mat-card-actions>
     <mat-card-header>
-      <!-- <li  >     -->
-      <!-- original layout
-        <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
-      <mat-card-subtitle>{{p.companyName}}</mat-card-subtitle>
-      {{p.priceOfProduct}}price 
-          {{p.quantity}}  quantity
-    </mat-card-header> -->
       <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
       <mat-card-subtitle>{{p.companyName}}</mat-card-subtitle>
     </mat-card-header>
@@ -80,9 +66,9 @@
       <button mat-raised-button class="cartbutton">Add to Cart</button>
     </mat-card-actions>
   </mat-card>
+</div>
 
-</div> -->
-<h2>Products</h2>
+<!-- <h2>Products</h2>
 <ul>
   <li *ngFor="let p of product.product">
     {{ p.nameOfProduct }}
@@ -93,5 +79,4 @@
     <button (click)="delete(p.id)">Delete</button>
     <hr />
   </li>
-</ul>
-
+</ul> -->
