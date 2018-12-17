@@ -1,5 +1,6 @@
 import { Inject, OnInit, Component } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
 
 export interface DialogData { }
 
@@ -11,13 +12,14 @@ export interface DialogData { }
 
 export class ProfileComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private router: Router) { }
 
   openDialog() {
     this.dialog.open(AccountDialog, {
       disableClose: true,
-      panelClass: 'full-dialog' });
-    }
+      panelClass: 'full-dialog'
+    });
+  }
 
   createDialog() {
     this.dialog.open(CCDialog, {
@@ -26,6 +28,12 @@ export class ProfileComponent implements OnInit {
     });
   }
   ngOnInit() {
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+    window.alert('You have been logged out.')
   }
 
 }
@@ -38,17 +46,17 @@ export class ProfileComponent implements OnInit {
 export class CCDialog {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
-    
+
   }
 }
 
-  @Component({
-    selector: 'account.dialog',
-    templateUrl: './account.dialog.html',
-    styleUrls: ['./profile.component.css']
-  })
+@Component({
+  selector: 'account.dialog',
+  templateUrl: './account.dialog.html',
+  styleUrls: ['./profile.component.css']
+})
 
-  export class AccountDialog {
-    constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-    
+export class AccountDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
 }
