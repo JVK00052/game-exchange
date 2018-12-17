@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user';
-
+import { APIURL } from '../../environments/environment.prod';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type' : 'application/json'
@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    return this.http.post<any>(`https://naildit-serverside.herokuapp.com/user/signup`, {user: { username, password }})
+    return this.http.post<any>(`${APIURL}/user/signup`, {user: { username, password }})
     .pipe(map(user => {
       if (user && user) {
         localStorage.setItem('token', user.sessionToken);

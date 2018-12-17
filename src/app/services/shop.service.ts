@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Products } from '../models/products'
+import { APIURL } from '../../environments/environment.prod'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,7 +17,7 @@ const httpOptions = {
 
 export class ShopService {
   products: Products[];
-  private url ='https://naildit-serverside.herokuapp.com'
+  private url =`${APIURL}`
   constructor(private http: HttpClient) { }
 
   getProducts(products: any): Observable<Products[]> {
