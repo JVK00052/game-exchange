@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login(username, password, isAdmin) {
+  public login(username, password, isAdmin) {
     this.userservice.login(username, password, isAdmin)
     .subscribe(
       data => {
