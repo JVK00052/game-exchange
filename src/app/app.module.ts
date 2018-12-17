@@ -17,7 +17,7 @@ import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-import { ProductsService } from './services/products.service';
+
 
 
 @NgModule({
@@ -49,7 +49,7 @@ import { ProductsService } from './services/products.service';
     HttpClient,
     UserService,
     AuthService,
-    ProductsService
+
   ],
   entryComponents: [
     CartDialog,
