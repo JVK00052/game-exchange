@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
 
   users = [];
   error = '';
+  username: string;
+  password: string;
   isAdmin = false;
 
   constructor(private router: Router, private userservice: UserService, private http: HttpClient) { }
