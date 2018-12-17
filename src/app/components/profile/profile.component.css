@@ -9,7 +9,7 @@ nav {
 }
 
 .nav-link {
-  /* background-color: silver; */
+  
   color: black;
 }
 
@@ -98,7 +98,7 @@ body{
 }
 
 form.form-example {
-  /* display: table; */
+  
   text-align: center;
 }
 
@@ -107,7 +107,7 @@ div.form-example {
 }
 
 label, input {
-  /* display: table-cell; */
+  
   margin-bottom: 5px;
 }
 
