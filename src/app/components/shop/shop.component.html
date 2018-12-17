@@ -38,6 +38,9 @@
 </form>
 
 <mat-card-actions>
+    <!-- <div *ngIf="isAdmin !== false">
+        <button (click)="add(product)" style="width: 70px; text-align: center;">ADD</button>
+      </div> -->
     <div class="admin-use">
       <button mat-raised-button class="add">Add</button>
     </div>
@@ -46,13 +49,17 @@
 <div class="deck">
   <mat-card class="card">
     <mat-card-actions>
+    
       <button mat-raised-button class="edit">Edit</button>
       <button mat-raised-button class="delete">Delete</button>
     </mat-card-actions>
     <mat-card-header>
       <div mat-card-avatar class="image"></div>
-      <mat-card-title>Bolts</mat-card-title>
-      <mat-card-subtitle>bolt</mat-card-subtitle>
+      <li  *ngFor="let p of Products">    
+      <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
+      <mat-card-subtitle>{{p.companyName}}</mat-card-subtitle>
+      {{p.priceOfProduct}}
+          {{p.quantity}}  
     </mat-card-header>
     <img mat-card-image src="#" alt="Photo of a bolts">
     <mat-card-content>
@@ -61,8 +68,8 @@
         BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS BOLTS
       </p>
     </mat-card-content>
-    <mat-card-actions>
-      <button ng-if="canEdit()" mat-raised-button class="cartbutton">Add to Cart</button>
+    <mat-card-actions>   
+      <button mat-raised-button class="cartbutton">Add to Cart</button>
     </mat-card-actions>
   </mat-card>
 </div>

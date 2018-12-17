@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
   }
   ngOnInit() {
   }
+
 }
 @Component({
   selector: 'profile-dialog',

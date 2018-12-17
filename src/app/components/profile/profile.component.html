@@ -52,10 +52,41 @@
       <br />
   </form>
 </aside>
-    <body>
-        <button mat-raised-button [matMenuTriggerFor]="menu">Account Settings</button>
+
+<body>
+    <button mat-raised-button [matMenuTriggerFor]="profile">Account/Payment</button>
+
+    <mat-menu #info="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
+      <button mat-menu-item [matMenuTriggerFor]="payment">Payment</button>
+    </mat-menu>
+    
+    <mat-menu #profile="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
+      <button mat-menu-item [matMenuTriggerFor]="payment">Payment Options</button>
+    </mat-menu>
+    
+    <mat-menu #account="matMenu">
+      <button mat-menu-item (click)="openDialog()">Add Info</button>
+      <button mat-menu-item (click)="openDialog()">Edit Info</button>
+    </mat-menu>
+    
+    <mat-menu #payment="matMenu">
+      <button mat-menu-item (click)="createDialog()">Add Payment</button>
+      <button mat-menu-item (click)="createDialog()">Edit Payment</button>
+      <button mat-menu-item (click)="createDialog()">View Payment</button>
+    </mat-menu>
+</body>
+    <!-- <body>
+        <button mat-raised-button [matMenuTriggerFor]="menu">Payment Options</button>
+        <button mat-raised-button [matMenuTriggerFor]="menu">Acct</button>
         <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openDialog()">Add Information</button>
           <button mat-menu-item (click)="openDialog()">Edit Account</button>
-          <button mat-menu-item (click)="createDialog()">Credit Card Information</button>
+          <button mat-menu-item (click)="createDialog()"> Add Credit Card Information</button>
+          <button mat-menu-item (click)="createDialog()">View Credit Card Information</button>
+          <button mat-menu-item (click)="createDialog()">Edit Credit Card Information</button>
         </mat-menu>
-      </body>
+      </body> -->
+
+        
