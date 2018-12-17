@@ -1,0 +1,35 @@
+.active {
+  background-color: rgba(194, 194, 194, 0.6) !important;
+  color: white;
+}
+nav {
+  font-family: 'Special Elite', cursive;
+  font-size: 25px;
+  background: url("https://www.publicdomainpictures.net/pictures/30000/nahled/light-wood-texture.jpg");
+}
+
+.nav-link {
+  /* background-color: silver; */
+  color: black;
+}
+
+#contact {
+  margin-top: 100px;
+}
+
+.contactus {
+  text-align: center;
+  width: 30em;
+  margin: auto;
+  margin-top: 2em;
+  font-size: 30px;
+}
+
+.sendemail {
+  background-color: blue;
+  color: white;
+}
+
+.edit {
+  background-color: red !important;
+}

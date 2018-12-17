@@ -1,0 +1,42 @@
+.active {
+  background-color: rgba(194, 194, 194, 0.6) !important;
+  color: white;
+}
+nav {
+  font-family: 'Special Elite', cursive;
+  font-size: 25px;
+  background: url("https://www.publicdomainpictures.net/pictures/30000/nahled/light-wood-texture.jpg");
+}
+
+.nav-link {
+  /* background-color: silver; */
+  color: black;
+}
+
+h1 {
+  font-size: 40px;
+  font-style: bold;
+}
+
+h2 {
+  font-size: 28px;
+  font-style: bold;
+  /* margin: 1em 5em 1em 5em; */
+}
+
+h3 {
+  font-size: 28px;
+  font-style: bold;
+}
+
+h4 {
+  font-size: 25px;
+  font-style: bold;
+}
+
+#faq {
+  overflow: hidden;
+  width: 145px;
+  margin-left: 700px;
+  border-radius: 2em;
+}

@@ -1,0 +1,68 @@
+.grandparentcontainer{
+  height:50%;
+  }
+  
+  .parentContainer{
+  vertical-align:middle;
+  height:100%;
+  margin-top: 15em;
+  }
+  
+  .loginForm {
+    vertical-align: middle;
+    max-width: 330px;
+    padding: 10px;
+    border-radius: 0.3em;
+    margin: auto;
+    background-color: rgba(133, 85, 23, 0.582);
+    color: white;
+  }
+  
+  .password {
+    margin-bottom: 10px;
+  }
+  
+  .loginbutton {
+    position: relative;
+    left: 50%;
+    background-color: rgba(133, 85, 23);
+    color: white;
+  }
+  
+  form h2 { 
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    letter-spacing: 4px;
+    color: white;
+  }
+  
+  label {
+    font-size: 16px;
+  }
+  
+  .help-block {
+    margin-top: 3px;
+    font-size: 18px;
+    color: white;
+  }
+
+  .back2home {
+    margin-top: 3px;
+    font-size: 18px;
+    color: white;
+  }
+  
+  a:link {
+    color: white;
+  }
+  
+  a:visited {
+    color: white;
+  }
+
+  .username {
+    font-size: 30px;
+  }
