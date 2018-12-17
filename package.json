@@ -32,6 +32,7 @@
     "moment": "^2.23.0",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
+    "serve": "^10.1.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
