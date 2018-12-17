@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +8,15 @@ import { AuthService } from '../../services/auth.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
   
   logout() {
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+    window.alert('You have been logged out.')
   }
 
 }

@@ -3,8 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user'
-import { JsonPipe } from '@angular/common';
-
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -38,6 +36,7 @@ export class UserService {
 
           localStorage.setItem('token', user.sessionToken);
           console.log(user)
+          console.log(isAdmin)
           console.log('You have hit this endpoint')
         }
         return user;
