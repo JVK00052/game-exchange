@@ -4,7 +4,7 @@ import { ShopService } from '../../services/shop.service';
 import { Product } from '../../models/product'
 import { Router } from '@angular/router';
 
-export interface DialogData {}
+export interface DialogData { }
 
 @Component({
   selector: 'app-shop',
@@ -14,29 +14,24 @@ export interface DialogData {}
 
 export class ShopComponent implements OnInit {
   product: any = [];
-  nameOfProduct: string;
-  typeOfProduct: string;
-  companyName: string;
-  priceOfProduct: string;
-  quantity: string;
 
   isAdminVar: any;
   tokenVar: any;
-  
-constructor(public dialog: MatDialog, private shopservice: ShopService, private router: Router) { }
 
-openDialog() {
-  this.dialog.open(AddDialog, {
-    disableClose: true,
-    panelClass: 'full-dialog'
-  });
-}
-editDialog() {
-  this.dialog.open(EditDialog, {
-    disableClose: true,
-    panelClass: 'full-dialog'
-  });
-}
+  constructor(public dialog: MatDialog, private shopservice: ShopService, private router: Router) { }
+
+  openDialog() {
+    this.dialog.open(AddDialog, {
+      disableClose: true,
+      panelClass: 'full-dialog'
+    });
+  }
+  editDialog() {
+    this.dialog.open(EditDialog, {
+      disableClose: true,
+      panelClass: 'full-dialog'
+    });
+  }
 
   ngOnInit() {
     this.getproduct();
@@ -74,39 +69,39 @@ editDialog() {
     }
   }
 
-  createProduct(): void {
-    this.shopservice.createProduct(this.nameOfProduct, this.typeOfProduct, this.companyName, this.priceOfProduct, this.quantity)
+  createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
+    this.shopservice.createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity).subscribe((product: Product) => console.log(product))
   }
-  
-  
-   logout() {
-     localStorage.removeItem('token');
-     localStorage.removeItem('isAdmin');
-     this.router.navigate(['/']);
-     window.alert('You have been logged out.')
-   }
- }
 
- @Component({
-   selector: 'add-dialog',
-   templateUrl: './add-dialog.html',
-   styleUrls: ['./shop.component.css']
- })
 
- export class AddDialog {
-   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
-   }
- }
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin');
+    this.router.navigate(['/']);
+    window.alert('You have been logged out.')
+  }
+}
 
- @Component({
-   selector: 'edit-dialog',
-   templateUrl: './edit-dialog.html',
-   styleUrls: ['./shop.component.css']
- })
+@Component({
+  selector: 'add-dialog',
+  templateUrl: './add-dialog.html',
+  styleUrls: ['./shop.component.css']
+})
 
- export class EditDialog {
+export class AddDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  }
+}
 
-   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+@Component({
+  selector: 'edit-dialog',
+  templateUrl: './edit-dialog.html',
+  styleUrls: ['./shop.component.css']
+})
 
-   }
+export class EditDialog {
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+
+  }
 }
