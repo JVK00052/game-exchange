@@ -18,7 +18,7 @@ export class ShopComponent implements OnInit {
   priceOfProduct: string;
   quantity: string;
 
-constructor(private shopservice: ShopService) { }
+constructor(private shopservice: ShopService, private router: Router) { }
 
   ngOnInit() {
    this.getproduct();
