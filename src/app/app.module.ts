@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ShopComponent } from './components/shop/shop.component';
+import { ShopComponent, AddDialog, EditDialog } from './components/shop/shop.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -39,7 +39,9 @@ import { CommonModule } from '@angular/common';
     SignupComponent,
     CartDialog,
     CCDialog,
-    AccountDialog 
+    AccountDialog,
+    AddDialog,
+    EditDialog
   ],
   imports: [
     HttpClientModule,
@@ -61,7 +63,9 @@ import { CommonModule } from '@angular/common';
   entryComponents: [
     CartDialog,
     CCDialog,
-    AccountDialog
+    AccountDialog, 
+    AddDialog,
+    EditDialog
   ],
   bootstrap: [AppComponent]
 })

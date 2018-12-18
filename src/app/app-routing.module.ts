@@ -9,7 +9,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
-import { User } from './models/user';
+// import { User } from './models/user';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'cart', canActivate: [AuthGuard], component: CartComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent }
-  { path: 'shop', component: ShopComponent, canActivate: [AuthGuard], data: {isAdmin: [true]} },
+  // { path: 'shop', component: ShopComponent, canActivate: [AuthGuard], data: {isAdmin: [true]} },
 ];
 
 @NgModule({
