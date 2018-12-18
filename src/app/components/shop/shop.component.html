@@ -30,22 +30,29 @@
       </ul>
     </nav>
   </header>
+
+  <body>
+        <button mat-raised-button [matMenuTriggerFor]="menu">Admin Options</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openDialog()">Add Product</button>
+        </mat-menu>
+      </body>
   
-  <form class="form">
+  <!-- <form class="form">
     <mat-form-field class="full-width">
       <input matInput placeholder="Search for something">
     </mat-form-field>
     <mat-card-actions>
       <button mat-raised-button class="searchbutton">Search</button>
     </mat-card-actions>
-  </form>
-  <div class="admin-use" *ngIf="isAdmin !== null">
+  </form> -->
+  <!-- <div class="admin-use" *ngIf="isAdmin !== null">
     <button mat-raised-button class="add">Add</button>
-  </div>
+  </div> -->
   <div class="deck">
     <mat-card class="card" *ngFor="let p of product.product">
       <mat-card-actions class="adminbuttons">
-        <button mat-raised-button class="edit">Edit</button>
+          <button mat-menu-item (click)="editDialog()">Edit</button>
         <button mat-raised-button class="delete">Delete</button>
       </mat-card-actions>
       <mat-card-header>

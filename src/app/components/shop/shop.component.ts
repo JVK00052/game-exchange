@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Inject, Component, OnInit } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { ShopService } from '../../services/shop.service';
 import { Product } from '../../models/product'
 import { Router } from '@angular/router';
 
+export interface DialogData {}
 
 @Component({
   selector: 'app-shop',
@@ -18,7 +20,20 @@ export class ShopComponent implements OnInit {
   priceOfProduct: string;
   quantity: string;
 
-constructor(private shopservice: ShopService, private router: Router) { }
+constructor(public dialog: MatDialog, private shopservice: ShopService, private router: Router) { }
+
+openDialog() {
+  this.dialog.open(AddDialog, {
+    disableClose: true,
+    panelClass: 'full-dialog'
+  });
+}
+editDialog() {
+  this.dialog.open(EditDialog, {
+    disableClose: true,
+    panelClass: 'full-dialog'
+  });
+}
 
   ngOnInit() {
    this.getproduct();
@@ -49,10 +64,42 @@ constructor(private shopservice: ShopService, private router: Router) { }
   createProduct(): void {
     this.shopservice.createProduct(this.nameOfProduct, this.typeOfProduct, this.companyName, this.priceOfProduct, this.quantity)
   }
-
+  
+  
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
     window.alert('You have been logged out.')
   }
 }
+
+@Component({
+  selector: 'add-dialog',
+  templateUrl: './add-dialog.html',
+  styleUrls: ['./shop.component.css']
+})
+
+export class AddDialog {
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+
+  }
+}
+
+@Component({
+  selector: 'edit-dialog',
+  templateUrl: './edit-dialog.html',
+  styleUrls: ['./shop.component.css']
+})
+
+export class EditDialog {
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+
+  }
+}
+
+
+
+
+
