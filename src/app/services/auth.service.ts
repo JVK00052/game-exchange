@@ -1,49 +1,49 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { User } from '../models/user';
+// import { Injectable } from '@angular/core';
+// import { HttpClient, HttpHeaders } from '@angular/common/http';
+// import { BehaviorSubject, Observable } from 'rxjs';
+// import { map } from 'rxjs/operators';
+// import { User } from '../models/user';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type' : 'application/json'
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type' : 'application/json'
 
-  })
-}
+//   })
+// }
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
 
-export class AuthService {
+// export class AuthService {
   
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+//   private currentUserSubject: BehaviorSubject<User>;
+//   public currentUser: Observable<User>;
   
-  constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-    this.currentUser = this.currentUserSubject.asObservable();
-  }
+//   constructor(private http: HttpClient) {
+//     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+//     this.currentUser = this.currentUserSubject.asObservable();
+//   }
 
-  public get currentUserValue(): User {
-    return this.currentUserSubject.value;
+//   public get currentUserValue(): User {
+//     return this.currentUserSubject.value;
 
-  }
+//   }
 
-  login(username: string, password: string) {
-    return this.http.post<any>(`https://naildit-serverside.herokuapp.com/user/signup`, {user: { username, password }})
-    .pipe(map(user => {
-      if (user && user) {
-        localStorage.setItem('token', user.sessionToken);
-        localStorage.setItem('user', user.user);
-      }
+//   login(username: string, password: string) {
+//     return this.http.post<any>(`https://naildit-serverside.herokuapp.com/user/signup`, {user: { username, password }})
+//     .pipe(map(user => {
+//       if (user && user) {
+//         localStorage.setItem('token', user.sessionToken);
+//         localStorage.setItem('user', user.user);
+//       }
 
-      return user;
+//       return user;
 
-    }))
-  }
+//     }))
+//   }
 
-  logout() {
-    localStorage.removeItem('token')
-  }
-}
+//   logout() {
+//     localStorage.removeItem('token')
+//   }
+// }
