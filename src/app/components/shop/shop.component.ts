@@ -38,8 +38,6 @@ editDialog() {
   });
 }
 
-  constructor(private shopservice: ShopService, private router: Router) {
-  }
 
   ngOnInit() {
     this.getproduct();
