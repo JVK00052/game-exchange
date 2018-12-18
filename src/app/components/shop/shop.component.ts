@@ -9,19 +9,33 @@ import { Router } from '@angular/router';
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
-export class ShopComponent implements OnInit {
 
-  product: any=[];
+export class ShopComponent implements OnInit {
+  product: any = [];
   nameOfProduct: string;
   typeOfProduct: string;
   companyName: string;
   priceOfProduct: string;
   quantity: string;
 
-constructor(private shopservice: ShopService, private router: Router) { }
+  isAdminVar: any;
+  tokenVar: any;
+  constructor(private shopservice: ShopService, private router: Router) {
+  }
 
   ngOnInit() {
-   this.getproduct();
+    this.getproduct();
+    if (localStorage.getItem("isAdmin") == "true") {
+      this.isAdminVar = true
+    } else {
+      this.isAdminVar = false
+    }
+
+    if (localStorage.getItem('token') == null) {
+      this.tokenVar = false
+    } else {
+      this.tokenVar = true
+    }
 
   }
   getproduct() {
@@ -52,6 +66,7 @@ constructor(private shopservice: ShopService, private router: Router) { }
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin');
     this.router.navigate(['/']);
     window.alert('You have been logged out.')
   }

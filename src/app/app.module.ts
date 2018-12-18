@@ -14,11 +14,13 @@ import { MaterialModule } from './material.module';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component'
 import { UserService } from './services/user.service';
-import { AuthService } from './services/auth.service';
+// import { AuthService } from './services/auth.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { ShopService } from './services/shop.service';
+import { CommonModule } from '@angular/common';
+
 
 
 
@@ -46,12 +48,13 @@ import { ShopService } from './services/shop.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
   ],
   providers: [
     HttpClient,
     UserService,
-    AuthService,
+    // AuthService,
     AuthGuard,
     ShopService,
   ],

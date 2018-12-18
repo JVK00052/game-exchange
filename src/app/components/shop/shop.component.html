@@ -24,29 +24,29 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="tokenVar">
         <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
       </li>
     </ul>
   </nav>
 </header>
 
-<form class="form">
+<!-- <form class="form">
   <mat-form-field class="full-width">
     <input matInput placeholder="Search for something">
   </mat-form-field>
   <mat-card-actions>
     <button mat-raised-button class="searchbutton">Search</button>
   </mat-card-actions>
-</form>
-<div class="admin-use">
+</form> -->
+<div class="admin-use" *ngIf="isAdminVar"><!-- -->
   <button mat-raised-button class="add">Add</button>
 </div>
 <div class="deck">
   <mat-card class="card" *ngFor="let p of product.product">
     <mat-card-actions class="adminbuttons">
-      <button mat-raised-button class="edit">Edit</button>
-      <button mat-raised-button class="delete">Delete</button>
+      <button mat-raised-button class="edit" *ngIf="isAdminVar">Edit</button>
+      <button mat-raised-button class="delete" *ngIf="isAdminVar">Delete</button>
     </mat-card-actions>
     <mat-card-header>
       <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
