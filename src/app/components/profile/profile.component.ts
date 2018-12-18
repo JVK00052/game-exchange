@@ -93,6 +93,7 @@ export class ProfileComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin');
     this.router.navigate(['/']);
     window.alert('You have been logged out.')
   }
