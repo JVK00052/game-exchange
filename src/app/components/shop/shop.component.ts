@@ -10,17 +10,12 @@ import { Router } from '@angular/router';
 })
 export class ShopComponent implements OnInit {
 
-  product: any=[];
-  nameOfProduct: string;
-  typeOfProduct: string;
-  companyName: string;
-  priceOfProduct: string;
-  quantity: string;
+  product: any = [];
 
-constructor(private shopservice: ShopService, private router: Router) { }
+  constructor(private shopservice: ShopService, private router: Router) { }
 
   ngOnInit() {
-   this.getproduct();
+    this.getproduct();
 
   }
   getproduct() {
@@ -45,8 +40,8 @@ constructor(private shopservice: ShopService, private router: Router) { }
     }
   }
 
-  createProduct(): void {
-    this.shopservice.createProduct(this.nameOfProduct, this.typeOfProduct, this.companyName, this.priceOfProduct, this.quantity)
+  createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
+    this.shopservice.createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity).subscribe((product: Product) => console.log(product))
   }
 
   logout() {
