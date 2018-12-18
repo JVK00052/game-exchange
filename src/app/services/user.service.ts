@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { User } from '../models/user'
+import { User } from '../models/user';
+import { APIURL } from '../../environments/environment.prod';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,7 +31,7 @@ export class UserService {
   }
 
   signup(username, password, isAdmin) {
-    return this.http.post<any>(`https://naildit-serverside.herokuapp.com/user/signup`, { user: { username, password, isAdmin } })
+    return this.http.post<any>(`${APIURL}/user/signup`, { user: { username, password, isAdmin } })
       .pipe(map(user => {
         if (user && user) {
 
@@ -42,7 +43,7 @@ export class UserService {
       }));
   }
   login(username, password, isAdmin) {
-    return this.http.post<any>(`https://naildit-serverside.herokuapp.com/user/login`, { user: { username, password, isAdmin } })
+    return this.http.post<any>(`${APIURL}/user/login`, { user: { username, password, isAdmin } })
       .pipe(map(user => {
         if (user && user) {
 

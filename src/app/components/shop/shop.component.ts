@@ -12,6 +12,7 @@ export interface DialogData {}
   styleUrls: ['./shop.component.css']
 })
 
+
 export class ShopComponent implements OnInit {
   product: any = [];
   nameOfProduct: string;
@@ -75,8 +76,8 @@ editDialog() {
     }
   }
 
-  createProduct(): void {
-    this.shopservice.createProduct(this.nameOfProduct, this.typeOfProduct, this.companyName, this.priceOfProduct, this.quantity)
+  createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
+    this.shopservice.createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity).subscribe((product: Product) => console.log(product))
   }
   
   
