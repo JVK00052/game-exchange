@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ShopComponent } from './components/shop/shop.component';
+import { ShopComponent, AddDialog, EditDialog } from './components/shop/shop.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
 import { ProfileComponent, CCDialog, AccountDialog } from './components/profile/profile.component';
@@ -17,6 +17,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { ShopService } from './services/shop.service';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [ 
@@ -31,7 +33,9 @@ import { ShopService } from './services/shop.service';
     SignupComponent,
     CartDialog,
     CCDialog,
-    AccountDialog 
+    AccountDialog,
+    AddDialog,
+    EditDialog
   ],
   imports: [
     HttpClientModule,
@@ -40,7 +44,8 @@ import { ShopService } from './services/shop.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
   ],
   providers: [
     HttpClient,
@@ -51,7 +56,9 @@ import { ShopService } from './services/shop.service';
   entryComponents: [
     CartDialog,
     CCDialog,
-    AccountDialog
+    AccountDialog, 
+    AddDialog,
+    EditDialog
   ],
   bootstrap: [AppComponent]
 })

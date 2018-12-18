@@ -11,13 +11,22 @@ export interface DialogData { }
 })
 
 export class CartComponent implements OnInit {
+  tokenVar: any;
   constructor(public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
+
+    if (localStorage.getItem('token') == null) {
+      this.tokenVar = false
+    } else {
+      this.tokenVar = true
+    }
+
   }
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin')
     this.router.navigate(['/']);
     window.alert('You have been logged out.')
   }

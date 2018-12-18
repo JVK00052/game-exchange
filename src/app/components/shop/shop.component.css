@@ -15,6 +15,7 @@ nav {
 
 .deck {
   text-align: center;
+  margin-top: 100px;
 }
 
 .cartbutton {
@@ -54,7 +55,7 @@ form {
 
 .admin-use {
   text-align: right;
-  margin-top: -10em;
+  margin-top: 5em;
   margin-right: 5em;
 }
 
