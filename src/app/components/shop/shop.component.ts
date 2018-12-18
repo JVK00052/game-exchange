@@ -79,36 +79,34 @@ editDialog() {
   }
   
   
-  logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('isAdmin');
-    this.router.navigate(['/']);
-    window.alert('You have been logged out.')
-  }
-}
+   logout() {
+     localStorage.removeItem('token');
+     localStorage.removeItem('isAdmin');
+     this.router.navigate(['/']);
+     window.alert('You have been logged out.')
+   }
+ }
 
-@Component({
-  selector: 'add-dialog',
-  templateUrl: './add-dialog.html',
-  styleUrls: ['./shop.component.css']
-})
+ @Component({
+   selector: 'add-dialog',
+   templateUrl: './add-dialog.html',
+   styleUrls: ['./shop.component.css']
+ })
 
-export class AddDialog {
+ export class AddDialog {
+   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+   }
+ }
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+ @Component({
+   selector: 'edit-dialog',
+   templateUrl: './edit-dialog.html',
+   styleUrls: ['./shop.component.css']
+ })
 
-  }
-}
+ export class EditDialog {
 
-@Component({
-  selector: 'edit-dialog',
-  templateUrl: './edit-dialog.html',
-  styleUrls: ['./shop.component.css']
-})
+   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
 
-export class EditDialog {
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
-
-  }
+   }
 }

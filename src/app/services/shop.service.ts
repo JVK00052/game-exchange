@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from '../models/product'
+import { Product } from '../models/product';
+import { APIURL } from '../../environments/environment.prod';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -9,7 +10,6 @@ const httpOptions = {
     'Authorization': localStorage.getItem('token')
   })
 }
-const url ='https://naildit-serverside.herokuapp.com'
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +20,16 @@ export class ShopService {
   constructor(private http: HttpClient) { }
 
   getProduct(product: any): Observable<Product[]> {
-    return this.http.get<Product[]>(`${url}/product/getall`, httpOptions)
+    return this.http.get<Product[]>(`${APIURL}/product/getall`, httpOptions)
   }
   deleteProduct(id: any): Observable<Product> {
-    return this.http.delete<Product>(`${url}/product/delete/${id}`, httpOptions)
+    return this.http.delete<Product>(`${APIURL}/product/delete/${id}`, httpOptions)
   }
   editProduct(id: any): Observable<Product> {
-    return this.http.put<Product>(`${url}/product/edit/${id}`, httpOptions)
+    return this.http.put<Product>(`${APIURL}/product/edit/${id}`, httpOptions)
   }
   createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
-    return this.http.post<any>(`${url}/product/createnew`, {product: {nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity}})
+    return this.http.post<any>(`${APIURL}/product/createnew`, {product: {nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity}})
+    console.log('clicked')
   }
 }

@@ -7,7 +7,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ShopComponent, AddDialog, EditDialog } from './components/shop/shop.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
-import { AuthComponent } from './components/auth/auth.component';
 import { ProfileComponent, CCDialog, AccountDialog } from './components/profile/profile.component';
 import { CartComponent, CartDialog } from './components/cart/cart.component';
 import { MaterialModule } from './material.module';
@@ -21,9 +20,6 @@ import { ShopService } from './services/shop.service';
 import { CommonModule } from '@angular/common';
 
 
-
-
-
 @NgModule({
   declarations: [ 
     AppComponent,
@@ -31,7 +27,6 @@ import { CommonModule } from '@angular/common';
     ShopComponent,
     ContactComponent,
     HelpFaqComponent,
-    AuthComponent,
     ProfileComponent,
     CartComponent,
     LoginComponent,

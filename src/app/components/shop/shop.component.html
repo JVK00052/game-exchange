@@ -1,67 +1,69 @@
 <header>
-  <nav>
-    <ul class="nav nav-pills nav-fill">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="/shop">Shop</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/contact">Contact Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/help">Help/FAQ</a>
-      </li>
-      <li class="nav-item">
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/profile">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/cart">Cart</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/signup">Signup</a>
-      </li>
-      <li class="nav-item" *ngIf="tokenVar">
-        <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<body>
-  <div class="admin-use" *ngIf="isAdminVar">
-    <button mat-raised-button [matMenuTriggerFor]="menu">Admin Options</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="openDialog()">Add Product</button>
-    </mat-menu>
-  </div>
-</body>
-
-<div class="deck">
-  <mat-card class="card" *ngFor="let p of product.product">
-    <mat-card-actions class="adminbuttons">
-      <button mat-menu-item (click)="editDialog()" *ngIf="isAdminVar">Edit</button>
-      <button mat-raised-button class="delete" *ngIf="isAdminVar">Delete</button>
-    </mat-card-actions>
-    <mat-card-header>
-      <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
-      <mat-card-subtitle>{{p.companyName}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="priceandquantity">
-        <div class="price">
-          {{p.priceOfProduct}}
-        </div>
-        <div class="quantity">
-          {{p.quantity}}
-        </div>
-      </div>
-    </mat-card-content>
+    <nav>
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/shop">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/help">Help/FAQ</a>
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup">Signup</a>
+        </li>
+        <li class="nav-item">
+          <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <form class="form">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Search for something">
+    </mat-form-field>
     <mat-card-actions>
-      <button mat-raised-button class="cartbutton">Add to Cart</button>
+      <button mat-raised-button class="searchbutton">Search</button>
     </mat-card-actions>
-  </mat-card>
-</div>
+  </form>
+  <div class="admin-use" *ngIf="isAdmin !== null">
+    <button mat-raised-button class="add" (click)="createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity)">Add</button>
+  </div>
+  <div class="deck">
+    <mat-card class="card" *ngFor="let p of product.product">
+      <mat-card-actions class="adminbuttons">
+        <button mat-raised-button class="edit">Edit</button>
+        <button mat-raised-button class="delete" (click)=" deleteProduct(p.id)">Delete</button>
+      </mat-card-actions>
+      <mat-card-header>
+        <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
+        <mat-card-subtitle>{{p.companyName}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="priceandquantity">
+          <div class="price">
+            {{p.priceOfProduct}}
+          </div>
+          <div class="quantity">
+            {{p.quantity}}
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button class="cartbutton">Add to Cart</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
