@@ -15,10 +15,11 @@ export interface DialogData { }
 })
 
 export class ProfileComponent implements OnInit {
-  profile: any = [];
 
+  profile: any = [];
   payment: any = [];
-tokenVar: any;
+  tokenVar: any;
+
   constructor(public dialog: MatDialog, private router: Router, private profileservice: ProfileService, private paymentservice: PaymentService) { }
 
   openDialog() {
@@ -37,8 +38,8 @@ tokenVar: any;
 
   ngOnInit() {
     this.getprofile();
-    
-     if (localStorage.getItem('token') == null) {
+
+    if (localStorage.getItem('token') == null) {
       this.tokenVar = false
     } else {
       this.tokenVar = true
@@ -52,6 +53,7 @@ tokenVar: any;
       this.profile = data
     })
   }
+
   deleteprofile(profile: Profile): void {
     if (localStorage.getItem('token')) {
       this.profileservice.deleteprofile(profile).subscribe((profile: any) => console.log(profile))
@@ -60,6 +62,7 @@ tokenVar: any;
       console.log('Not an authorized user.')
     }
   }
+  
   editprofile(profile: Profile): void {
     if (localStorage.getItem('token')) {
       this.profileservice.editprofile(profile).subscribe((profile: Profile) => console.log(profile))
