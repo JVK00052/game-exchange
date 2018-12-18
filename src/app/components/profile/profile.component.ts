@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   profile: any = [];
 
   payment: any = [];
-
+tokenVar: any;
   constructor(public dialog: MatDialog, private router: Router, private profileservice: ProfileService, private paymentservice: PaymentService) { }
 
   openDialog() {
@@ -37,6 +37,12 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getprofile();
+    
+     if (localStorage.getItem('token') == null) {
+      this.tokenVar = false
+    } else {
+      this.tokenVar = true
+    }
   }
 
   getprofile() {
