@@ -51,7 +51,6 @@ editDialog() {
     } else {
       this.tokenVar = true
     }
-
   }
   getproduct() {
     this.product = [];
@@ -113,8 +112,3 @@ export class EditDialog {
 
   }
 }
-
-
-
-
-
