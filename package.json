@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "serve -s dist/naild-it",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod",
-    "start": "serve -s dist/naild-it"
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +33,7 @@
     "moment": "^2.23.0",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
+    "serve": "^10.1.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
