@@ -3,7 +3,6 @@ import { ShopService } from '../../services/shop.service';
 import { Product } from '../../models/product'
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',

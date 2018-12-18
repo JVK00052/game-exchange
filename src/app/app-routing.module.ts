@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'profile', canActivate: [AuthGuard], component: ProfileComponent},
   { path: 'cart', canActivate: [AuthGuard], component: CartComponent},
   { path: 'signup', component: SignupComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
   { path: 'shop', component: ShopComponent, canActivate: [AuthGuard], data: {isAdmin: [true]} },
 ];
 
