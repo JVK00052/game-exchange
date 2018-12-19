@@ -9,8 +9,8 @@ import { ShopComponent } from './components/shop/shop.component';
 import { AddProductComponent } from './components/addproduct/addproduct.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
-import { ProfileComponent, CCDialog, AccountDialog, CCeditDialog } from './components/profile/profile.component';
-import { CartComponent, CartDialog } from './components/cart/cart.component';
+import { ProfileComponent} from './components/profile/profile.component';
+import { CartComponent } from './components/cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component'
@@ -21,10 +21,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { ShopService } from './services/shop.service';
 import { CommonModule } from '@angular/common';
 import { UpdateShopComponent } from './components/updateshop/updateshop.component';
+import { AddPaymentComponent } from './components/addpayment/addpayment.component';
+import { UpdatePaymentComponent } from './components/updatepayment/updatepayment.component';
 
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     HomeComponent,
     ShopComponent,
@@ -36,11 +38,8 @@ import { UpdateShopComponent } from './components/updateshop/updateshop.componen
     CartComponent,
     LoginComponent,
     SignupComponent,
-    CartDialog,
-    CCDialog,
-    AccountDialog,
-    // AddDialog,
-    // EditDialog
+    AddPaymentComponent,
+    UpdatePaymentComponent,
 
   ],
   imports: [
@@ -48,28 +47,26 @@ import { UpdateShopComponent } from './components/updateshop/updateshop.componen
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     CommonModule,
+    ReactiveFormsModule
+
   ],
   providers: [
     HttpClient,
     UserService,
     AuthGuard,
-    ShopService,
+    ShopService
   ],
   entryComponents: [
-    CartDialog,
-    CCDialog,
-
-    AccountDialog,
+    AddPaymentComponent,
+    UpdatePaymentComponent,
     AddProductComponent,
-    UpdateShopComponent, 
-    // AddDialog,
-    // EditDialog
-
+    UpdateShopComponent,
   ],
   bootstrap: [AppComponent]
 })
