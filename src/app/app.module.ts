@@ -14,7 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component'
 import { UserService } from './services/user.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { ShopService } from './services/shop.service';
 import { CommonModule } from '@angular/common';
@@ -41,17 +41,18 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    CommonModule,
+    CommonModule
   ],
   providers: [
     HttpClient,
     UserService,
     AuthGuard,
-    ShopService,
+    ShopService
   ],
   entryComponents: [
     CartDialog,

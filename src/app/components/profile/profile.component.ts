@@ -16,9 +16,9 @@ export interface DialogData { }
 
 export class ProfileComponent implements OnInit {
   profile: any = [];
-
   payment: any = [];
-tokenVar: any;
+  
+  tokenVar: any;
   constructor(public dialog: MatDialog, private router: Router, private profileservice: ProfileService, private paymentservice: PaymentService) { }
 
   openDialog() {
@@ -37,8 +37,8 @@ tokenVar: any;
 
   ngOnInit() {
     this.getprofile();
-    
-     if (localStorage.getItem('token') == null) {
+
+    if (localStorage.getItem('token') == null) {
       this.tokenVar = false
     } else {
       this.tokenVar = true
