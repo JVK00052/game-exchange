@@ -8,7 +8,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
+<<<<<<< HEAD
     "start": "serve -s dist/game-exchange/"
+=======
+    "start": "serve -s dist/"
+>>>>>>> 3b9bd1f351ea77e7a06a1e15dfc238065b858454
   },
   "private": true,
   "dependencies": {
