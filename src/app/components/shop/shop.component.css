@@ -71,3 +71,7 @@ form {
 .priceandquantity {
   text-align: right;
 }
+
+tbody {
+  font-size: 30px;
+}

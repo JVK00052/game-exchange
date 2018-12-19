@@ -147,3 +147,7 @@ label {
 .dialogButtons {
   text-align: center;
 }
+
+tbody {
+  font-size: 30px;
+}
