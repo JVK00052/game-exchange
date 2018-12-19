@@ -5,7 +5,7 @@
         <a class="nav-link" routerLink="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/shop">Shop</a>
+        <a class="nav-link active" routerLink="/shop">Shop</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/contact">Contact Us</a>
@@ -16,7 +16,7 @@
       <li class="nav-item">
       </li>
       <li class="nav-item">
-        <a class="nav-link active" routerLink="/profile">Profile</a>
+        <a class="nav-link" routerLink="/profile">Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/cart">Cart</a>
@@ -31,51 +31,18 @@
   </nav>
 </header>
 
-<aside class="profile-card">
-  <form action="" method="get" class="form-example">
-    <div class="form-example">
-      <label for="name">Name: </label>
-      <input type="text" name="name" id="name" required>
-    </div>
-    <br />
-    <div class="form-example">
-      <label for="email">Username: </label>
-      <input type="text" name="username" id="username" required>
-    </div>
-    <br />
-    <div class="form-example">
-      <label for="email">Email: </label>
-      <input type="email" name="email" id="email" required>
-    </div>
-    <br />
-    <div class="form-example">
-      <label for="phone">Phone #: </label>
-      <input type="text" name="phone" id="phone" required>
-    </div>
-    <br />
-  </form>
-</aside>
+<div class="container">
+    <button class="navButton" mat-fab="accent" (click)="openDialog()">ADD</button>
+    <br>
+    <h1>Payment</h1>
+      <tbody *ngFor="let p of payment.payment">
+        <td>{{p.nameOfCompany}}</td>
+        <td>{{p.cardNumber}}</td>
+        <td>{{p.cardVerification}}</td>
+        <td>{{p.expirationDate}}</td>
+        <td>{{p.cardOwner}}</td>
+        <td><button mat-button (click)="editpayment(p.id)" style="float: right; width: 2em; text-align: center; ">update</button></td>
+        <td><button mat-button (click)="deletepayment(p.id)" style="float: right; width: 1em; text-align: center; color: maroon; font-weight: bolder">x</button></td>
+      </tbody>
+  </div>
 
-<body>
-  <button mat-raised-button [matMenuTriggerFor]="profile">Account/Payment</button>
-
-  <mat-menu #info="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
-    <button mat-menu-item [matMenuTriggerFor]="payment">Payment</button>
-  </mat-menu>
-
-  <mat-menu #profile="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
-    <button mat-menu-item [matMenuTriggerFor]="payment">Payment Options</button>
-  </mat-menu>
-
-  <mat-menu #account="matMenu">
-    <button mat-menu-item (click)="openDialog()">Add Info</button>
-    <button mat-menu-item (click)="openDialog()">Edit Info</button>
-  </mat-menu>
-
-  <mat-menu #payment="matMenu">
-    <button mat-menu-item (click)="createDialog()">Add Payment</button>
-    <button mat-menu-item (click)="editDialog()">Edit Payment</button>
-  </mat-menu>
-</body>

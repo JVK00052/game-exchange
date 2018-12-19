@@ -20,6 +20,10 @@ export class ShopService {
   private url =`${APIURL}`
   constructor(private http: HttpClient) { }
 
+  getProducts(id: number): Observable<Product[]> {
+    return this.http.get<Product[]>(APIURL + `/product/getall/` + id);
+  }
+
   getProduct(product: any): Observable<Product[]> {
     return this.http.get<Product[]>(`${APIURL}/product/getall`, httpOptions)
   }
@@ -28,11 +32,15 @@ export class ShopService {
     return this.http.delete<Product>(`${APIURL}/product/delete/${id}`, httpOptions)
   }
 
-  editProduct(id: any): Observable<Product> {
-    return this.http.put<Product>(`${APIURL}/product/edit/${id}`, httpOptions)
-  }
 
-  createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
-    return this.http.post<any>(`${APIURL}/product/createnew`, {product: {nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity}})
+  editProduct(product: any, productid: any) {
+    return this.http.put(`${APIURL}/product/edit/${productid}`, product, httpOptions)
+      .subscribe(() => {
+        this.getProducts(productid);
+      })
+  }
+ 
+  createProduct(product: any) {
+    return this.http.post<any>(`${APIURL}/product/createnew`, {product}, httpOptions)
   }
 }
