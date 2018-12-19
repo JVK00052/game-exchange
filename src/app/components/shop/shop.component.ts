@@ -3,6 +3,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { ShopService } from '../../services/shop.service';
 import { Product } from '../../models/product'
 import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Form } from '@angular/forms';
 
 export interface DialogData { }
 
@@ -13,12 +14,12 @@ export interface DialogData { }
 })
 
 export class ShopComponent implements OnInit {
-
+  createProductForm: FormGroup;
   product: any = [];
   isAdminVar: any;
   tokenVar: any;
 
-  constructor(public dialog: MatDialog, private shopservice: ShopService, private router: Router) { }
+  constructor(public dialog: MatDialog, private shopservice: ShopService, private router: Router, private formBuilder: FormBuilder) { }
 
   openDialog() {
     this.dialog.open(AddDialog, {
@@ -49,6 +50,14 @@ export class ShopComponent implements OnInit {
     } else {
       this.tokenVar = true
     }
+
+    this.createProductForm = this.formBuilder.group({
+      "nameOfProduct": new FormControl(),
+      "typeOfProduct": new FormControl(),
+      "companyName": new FormControl(),
+      "priceOfProduct": new FormControl(),
+      "quantity": new FormControl(),
+    })
   }
 
   getproduct() {
@@ -106,7 +115,12 @@ export class AddDialog {
 
 export class EditDialog {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, dialog: MatDialog, private shopservice: ShopService, private router: Router) {
 
+  }
+  editProduct(product: Product): void {
+    if (localStorage.getItem('token')) {
+      this.shopservice.editProduct(product).subscribe((product: any) => console.log(product))
+    }
   }
 }

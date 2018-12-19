@@ -14,11 +14,10 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component'
 import { UserService } from './services/user.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { ShopService } from './services/shop.service';
 import { CommonModule } from '@angular/common';
-
 
 @NgModule({
   declarations: [ 
@@ -36,7 +35,7 @@ import { CommonModule } from '@angular/common';
     AccountDialog,
     AddDialog,
     EditDialog,
-    CCeditDialog
+    CCeditDialog,
   ],
   imports: [
     HttpClientModule,
@@ -46,7 +45,8 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    CommonModule,
+    CommonModule, 
+     ReactiveFormsModule
   ],
   providers: [
     HttpClient,

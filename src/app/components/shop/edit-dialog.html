@@ -1,27 +1,27 @@
 <div class="edit-dialog">
-        <form class="example-form">
+        <form [formGroup]="createProductForm" >
           <h1 mat-dialog-title>Edit</h1>
-          <div class="name">
+          <div class="form-group">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Name of product" value="">
+            <input matInput placeholder="Name of product" formControlName="nameOfProduct" name="nameOfProduct" value="">
           </mat-form-field>
           </div>
       
-          <div class="type">
+          <div class="form-group">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Type of product" value="">
+            <input matInput placeholder="Type of product" formControlName="typeOfProduct" name="typeOfProduct" value="">
           </mat-form-field>
           </div>
       
-          <div class="company">
+          <div class="form-group">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Company name" value="">
+            <input matInput placeholder="Company name" formControlName="companyName" name="companyName"value="">
           </mat-form-field>
           </div>
       
-          <div class="price">
+          <div class="form-group">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Price" value="">
+            <input matInput placeholder="Price" formControlName="priceOfProduct" name="priceOfProduct" value="">
           </mat-form-field>
           </div>
       
