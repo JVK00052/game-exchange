@@ -35,6 +35,13 @@ tokenVar: any;
     });
   }
 
+  editDialog() {
+    this.dialog.open(CCeditDialog, {
+      disableClose: true,
+      panelClass: 'full-dialog'
+    });
+  }
+
   ngOnInit() {
     this.getprofile();
     
@@ -125,6 +132,17 @@ export class CCDialog {
 })
 
 export class AccountDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
+}
+
+@Component({
+  selector: 'ccedit-dialog',
+  templateUrl: './ccedit-dialog.html',
+  styleUrls: ['./profile.component.css']
+})
+
+export class CCeditDialog {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
 }
