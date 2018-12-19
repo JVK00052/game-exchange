@@ -4,23 +4,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ShopComponent } from './components/shop/shop.component';
+import { ShopComponent, AddDialog, EditDialog } from './components/shop/shop.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
-import { AuthComponent } from './components/auth/auth.component';
-import { ProfileComponent, CCDialog, AccountDialog } from './components/profile/profile.component';
+import { ProfileComponent, CCDialog, AccountDialog, CCeditDialog } from './components/profile/profile.component';
 import { CartComponent, CartDialog } from './components/cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component'
 import { UserService } from './services/user.service';
-import { AuthService } from './services/auth.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { ShopService } from './services/shop.service';
-
-
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -30,14 +27,16 @@ import { ShopService } from './services/shop.service';
     ShopComponent,
     ContactComponent,
     HelpFaqComponent,
-    AuthComponent,
     ProfileComponent,
     CartComponent,
     LoginComponent,
     SignupComponent,
     CartDialog,
     CCDialog,
-    AccountDialog 
+    AccountDialog,
+    AddDialog,
+    EditDialog,
+    CCeditDialog
   ],
   imports: [
     HttpClientModule,
@@ -46,19 +45,22 @@ import { ShopService } from './services/shop.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
   ],
   providers: [
     HttpClient,
     UserService,
-    AuthService,
     AuthGuard,
     ShopService,
   ],
   entryComponents: [
     CartDialog,
     CCDialog,
-    AccountDialog
+    AccountDialog, 
+    AddDialog,
+    EditDialog, 
+    CCeditDialog
   ],
   bootstrap: [AppComponent]
 })

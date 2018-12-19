@@ -24,6 +24,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
+      <li class="nav-item" *ngIf="tokenVar">
+        <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
+      </li>
     </ul>
   </nav>
 </header>
@@ -46,47 +49,33 @@
     </div>
     <br />
     <div class="form-example">
-        <label for="phone">Phone #: </label>
-        <input type="text" name="phone" id="phone" required>
-      </div>
-      <br />
+      <label for="phone">Phone #: </label>
+      <input type="text" name="phone" id="phone" required>
+    </div>
+    <br />
   </form>
 </aside>
 
 <body>
-    <button mat-raised-button [matMenuTriggerFor]="profile">Account/Payment</button>
+  <button mat-raised-button [matMenuTriggerFor]="profile">Account/Payment</button>
 
-    <mat-menu #info="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
-      <button mat-menu-item [matMenuTriggerFor]="payment">Payment</button>
-    </mat-menu>
-    
-    <mat-menu #profile="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
-      <button mat-menu-item [matMenuTriggerFor]="payment">Payment Options</button>
-    </mat-menu>
-    
-    <mat-menu #account="matMenu">
-      <button mat-menu-item (click)="openDialog()">Add Info</button>
-      <button mat-menu-item (click)="openDialog()">Edit Info</button>
-    </mat-menu>
-    
-    <mat-menu #payment="matMenu">
-      <button mat-menu-item (click)="createDialog()">Add Payment</button>
-      <button mat-menu-item (click)="createDialog()">Edit Payment</button>
-      <button mat-menu-item (click)="createDialog()">View Payment</button>
-    </mat-menu>
+  <mat-menu #info="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
+    <button mat-menu-item [matMenuTriggerFor]="payment">Payment</button>
+  </mat-menu>
+
+  <mat-menu #profile="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
+    <button mat-menu-item [matMenuTriggerFor]="payment">Payment Options</button>
+  </mat-menu>
+
+  <mat-menu #account="matMenu">
+    <button mat-menu-item (click)="openDialog()">Add Info</button>
+    <button mat-menu-item (click)="openDialog()">Edit Info</button>
+  </mat-menu>
+
+  <mat-menu #payment="matMenu">
+    <button mat-menu-item (click)="createDialog()">Add Payment</button>
+    <button mat-menu-item (click)="editDialog()">Edit Payment</button>
+  </mat-menu>
 </body>
-    <!-- <body>
-        <button mat-raised-button [matMenuTriggerFor]="menu">Payment Options</button>
-        <button mat-raised-button [matMenuTriggerFor]="menu">Acct</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="openDialog()">Add Information</button>
-          <button mat-menu-item (click)="openDialog()">Edit Account</button>
-          <button mat-menu-item (click)="createDialog()"> Add Credit Card Information</button>
-          <button mat-menu-item (click)="createDialog()">View Credit Card Information</button>
-          <button mat-menu-item (click)="createDialog()">Edit Credit Card Information</button>
-        </mat-menu>
-      </body> -->
-
-        

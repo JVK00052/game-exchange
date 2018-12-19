@@ -9,6 +9,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+// import { User } from './models/user';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
