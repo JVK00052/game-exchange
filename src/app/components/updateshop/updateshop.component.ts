@@ -41,5 +41,4 @@ export class UpdateShopComponent implements OnInit {
     
     this.matDialogRef.close();
   }
-
 }
