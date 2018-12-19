@@ -14,16 +14,18 @@ import { UpdateShopComponent } from '../updateshop/updateshop.component';
 })
 
 export class ShopComponent implements OnInit {
-  currentUser: any = JSON.parse(localStorage.getItem('currentUser')) || '';
-  product: any = [];
 
+  currentUser: any = JSON.parse(localStorage.getItem('currentUser')) || '';
+    product: any = [];
   isAdminVar: any;
   tokenVar: any;
 
   constructor(private dialog: MatDialog, private shopservice: ShopService, private router: Router) { }
 
   ngOnInit() {
+
     this.getproduct();
+
     if (localStorage.getItem("isAdmin") == "true") {
       this.isAdminVar = true
     } else {
@@ -36,6 +38,7 @@ export class ShopComponent implements OnInit {
       this.tokenVar = true
     }
   }
+
   getproduct() {
     this.product = [];
     this.shopservice.getProduct(this.product.id).subscribe((data: any) => {
@@ -64,6 +67,7 @@ export class ShopComponent implements OnInit {
       console.log('Not an authorized user.')
     }
   }
+
   // editProduct(product: Product): void {
   //   if (localStorage.getItem('token')) {
   //     this.shopservice.editProduct(product).subscribe((product: Product) => console.log(product))
@@ -71,10 +75,10 @@ export class ShopComponent implements OnInit {
   //   }
   // }
 
+
   // createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
   //   this.shopservice.createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity).subscribe((product: Product) => console.log(product))
   // }
-
 
   logout() {
     localStorage.removeItem('token');

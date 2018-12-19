@@ -26,9 +26,11 @@ export class ShopService {
   getProduct(product: any): Observable<Product[]> {
     return this.http.get<Product[]>(`${APIURL}/product/getall`, httpOptions)
   }
+  
   deleteProduct(id: any): Observable<Product> {
     return this.http.delete<Product>(`${APIURL}/product/delete/${id}`, httpOptions)
   }
+
 
   editProduct(product: any, productid: any) {
     return this.http.put(`${APIURL}/product/edit/${productid}`, {product}, httpOptions)
@@ -42,5 +44,6 @@ export class ShopService {
   createProduct(product: any) {
     return this.http.post<any>(`${APIURL}/product/createnew`, {product}, httpOptions)
     console.log('clicked')
+
   }
 }
