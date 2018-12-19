@@ -24,6 +24,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
+      <li class="nav-item" *ngIf="tokenVar">
+        <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
+      </li>
     </ul>
   </nav>
 </header>
@@ -54,7 +57,7 @@
           </div>
           <div class="control-group">
             <div class="form-group">
-              <input type="number" class="form-control" placeholder="Your Phone Number" id="phone" name="number">
+              <input type="number" class="form-control" placeholder="Your Phone Number" maxlength="16" id="phone" name="number">
               <p class="help-block text-danger"></p>
             </div>
           </div>

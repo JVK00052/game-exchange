@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user';
 import { APIURL } from '../../environments/environment.prod';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -36,7 +37,6 @@ export class UserService {
 
           localStorage.setItem('token', user.sessionToken);
           console.log(user)
-          console.log(isAdmin)
           console.log('You have hit this endpoint')
         }
         return user;
@@ -48,6 +48,7 @@ export class UserService {
         if (user && user) {
 
           localStorage.setItem('token', user.sessionToken);
+          localStorage.setItem('isAdmin', user.user.isAdmin);
           console.log(user)
           console.log('You have hit this endpoint')
         }

@@ -24,6 +24,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
+      <li class="nav-item" *ngIf="tokenVar">
+        <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
+      </li>
     </ul>
   </nav>
 </header>
@@ -33,7 +36,6 @@
       <div mat-card-avatar class="image"></div>
       <mat-card-title>Bolts</mat-card-title>
     </mat-card-header>
-    <img mat-card-image src="#" alt="Photo of a bolts">
     <mat-card-content>
       Price
     </mat-card-content>

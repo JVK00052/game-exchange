@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router'
 
 export interface DialogData { }
 
@@ -10,9 +11,24 @@ export interface DialogData { }
 })
 
 export class CartComponent implements OnInit {
-  constructor(public dialog: MatDialog) { }
+  tokenVar: any;
+  constructor(public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
+
+    if (localStorage.getItem('token') == null) {
+      this.tokenVar = false
+    } else {
+      this.tokenVar = true
+    }
+
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin')
+    this.router.navigate(['/']);
+    window.alert('You have been logged out.')
   }
 
   openDialog() {
