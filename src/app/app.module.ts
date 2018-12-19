@@ -9,7 +9,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { AddProductComponent } from './components/addproduct/addproduct.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent} from './components/profile/profile.component';
 import { CartComponent } from './components/cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './components/login/login.component';
@@ -21,12 +21,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { ShopService } from './services/shop.service';
 import { CommonModule } from '@angular/common';
 import { UpdateShopComponent } from './components/updateshop/updateshop.component';
-import { AddpaymentComponent } from './components/addpayment/addpayment.component';
+import { AddPaymentComponent } from './components/addpayment/addpayment.component';
 import { UpdatePaymentComponent } from './components/updatepayment/updatepayment.component';
 
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     HomeComponent,
     ShopComponent,
@@ -38,31 +38,35 @@ import { UpdatePaymentComponent } from './components/updatepayment/updatepayment
     CartComponent,
     LoginComponent,
     SignupComponent,
-    AddpaymentComponent,
+    AddPaymentComponent,
     UpdatePaymentComponent,
+
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     CommonModule,
+    ReactiveFormsModule
+
   ],
   providers: [
     HttpClient,
     UserService,
     AuthGuard,
-    ShopService,
+    ShopService
   ],
   entryComponents: [
+    AddPaymentComponent,
+    UpdatePaymentComponent,
     AddProductComponent,
-    UpdateShopComponent, 
-    AddpaymentComponent,
-    UpdatePaymentComponent
+    UpdateShopComponent,
   ],
   bootstrap: [AppComponent]
 })

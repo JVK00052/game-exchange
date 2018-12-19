@@ -1,14 +1,10 @@
 import { Inject, OnInit, Component } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
-import { Router } from '@angular/router';
-import { Profile } from '../../models/profile';
-// import { ProfileService } from '../../services/profile.service';
-import { Payment } from '../../models/payment';
+import { MatDialog } from '@angular/material';
 import { PaymentService } from '../../services/payment.service';
-import { AddpaymentComponent } from '../addpayment/addpayment.component';
-import { UpdatePaymentComponent } from '../updatepayment/updatepayment.component';
-
-// export interface DialogData { }
+import { Payment } from '../../models/payment';;
+import { Router } from '@angular/router';
+import { AddPaymentComponent } from '../addpayment/addpayment.component';
+import { UpdatePaymentComponent} from '../updatepayment/updatepayment.component';
 
 @Component({
   selector: 'app-profile',
@@ -17,18 +13,21 @@ import { UpdatePaymentComponent } from '../updatepayment/updatepayment.component
 })
 
 export class ProfileComponent implements OnInit {
-  currentUser: any = JSON.parse(localStorage.getItem('currentUser')) || '';
-  profile: any = [];
 
+
+  currentUser: any = JSON.parse(localStorage.getItem('currentUser')) || '';
   payment: any = [];
   isAdminVar: any;
   tokenVar: any;
 
-  constructor(private dialog: MatDialog, private router: Router, private paymentservice: PaymentService) { }
+  constructor(public dialog: MatDialog, private router: Router, private paymentservice: PaymentService) { } 
+
 
   ngOnInit() {
-    this.getPayment();
-     if (localStorage.getItem("isAdmin")  == "true") {
+
+    this.getpayment();
+
+    if (localStorage.getItem("isAdmin") == "true") {
       this.isAdminVar = true
     } else {
       this.isAdminVar = false
@@ -41,7 +40,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  getPayment() {
+  getpayment() {
     this.payment = [];
     this.paymentservice.getPayment(this.payment.id).subscribe((data: any) => {
       console.log(data)
@@ -53,22 +52,22 @@ export class ProfileComponent implements OnInit {
     this.dialog.open(AddPaymentComponent);
   }
 
-  editPayment(payment) {
+  editpayment(payment) {
     this.dialog.open(UpdatePaymentComponent, {
       data: payment
-      
+
     });
     console.log(payment);
   }
-  deletePayment(payment: Payment): void {
+
+  deletepayment(payment: Payment): void {
     if (localStorage.getItem('token')) {
       this.paymentservice.deletePayment(payment).subscribe((payment: any) => console.log(payment))
-      this.getPayment();
+      this.getpayment();
     } else {
       console.log('Not an authorized user.')
     }
   }
-
 
   logout() {
     localStorage.removeItem('token');
