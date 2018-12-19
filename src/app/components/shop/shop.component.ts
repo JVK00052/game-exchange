@@ -13,8 +13,8 @@ export interface DialogData { }
 })
 
 export class ShopComponent implements OnInit {
-  product: any = [];
 
+  product: any = [];
   isAdminVar: any;
   tokenVar: any;
 
@@ -26,6 +26,7 @@ export class ShopComponent implements OnInit {
       panelClass: 'full-dialog'
     });
   }
+
   editDialog() {
     this.dialog.open(EditDialog, {
       disableClose: true,
@@ -34,7 +35,9 @@ export class ShopComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.getproduct();
+
     if (localStorage.getItem("isAdmin") == "true") {
       this.isAdminVar = true
     } else {
@@ -47,6 +50,7 @@ export class ShopComponent implements OnInit {
       this.tokenVar = true
     }
   }
+
   getproduct() {
     this.product = [];
     this.shopservice.getProduct(this.product.id).subscribe((data: any) => {
@@ -54,6 +58,7 @@ export class ShopComponent implements OnInit {
       this.product = data
     })
   }
+
   deleteProduct(product: Product): void {
     if (localStorage.getItem('token')) {
       this.shopservice.deleteProduct(product).subscribe((product: any) => console.log(product))
@@ -62,6 +67,7 @@ export class ShopComponent implements OnInit {
       console.log('Not an authorized user.')
     }
   }
+
   editProduct(product: Product): void {
     if (localStorage.getItem('token')) {
       this.shopservice.editProduct(product).subscribe((product: Product) => console.log(product))
@@ -72,7 +78,6 @@ export class ShopComponent implements OnInit {
   createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
     this.shopservice.createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity).subscribe((product: Product) => console.log(product))
   }
-
 
   logout() {
     localStorage.removeItem('token');

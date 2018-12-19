@@ -35,6 +35,13 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  editDialog() {
+    this.dialog.open(CCeditDialog, {
+      disableClose: true,
+      panelClass: 'full-dialog'
+    });
+  }
+
   ngOnInit() {
     this.getprofile();
 
@@ -52,6 +59,7 @@ export class ProfileComponent implements OnInit {
       this.profile = data
     })
   }
+
   deleteprofile(profile: Profile): void {
     if (localStorage.getItem('token')) {
       this.profileservice.deleteprofile(profile).subscribe((profile: any) => console.log(profile))
@@ -60,6 +68,7 @@ export class ProfileComponent implements OnInit {
       console.log('Not an authorized user.')
     }
   }
+  
   editprofile(profile: Profile): void {
     if (localStorage.getItem('token')) {
       this.profileservice.editprofile(profile).subscribe((profile: Profile) => console.log(profile))
@@ -125,6 +134,17 @@ export class CCDialog {
 })
 
 export class AccountDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
+}
+
+@Component({
+  selector: 'ccedit-dialog',
+  templateUrl: './ccedit-dialog.html',
+  styleUrls: ['./profile.component.css']
+})
+
+export class CCeditDialog {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
 }
