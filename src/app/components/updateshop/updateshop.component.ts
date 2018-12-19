@@ -15,7 +15,6 @@ export class UpdateShopComponent implements OnInit {
   id: number;
   currentUser: any = JSON.parse(localStorage.getItem('currentUser')) || '';
   productDetails: Product;
-  shopForm: FormGroup;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: any,
@@ -38,7 +37,7 @@ export class UpdateShopComponent implements OnInit {
   onSubmit() {
     console.log(this.updateShopForm.value)
     this.shopService.editProduct(this.updateShopForm.value, this.data)
-    
+     
     this.matDialogRef.close();
   }
 
