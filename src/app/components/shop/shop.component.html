@@ -33,7 +33,7 @@
 
 
 <div class="container">
-    <button class="navButton" mat-fab="accent" (click)="openDialog()">ADD</button>
+    <button class="navButton"  (click)="openDialog()">ADD</button>
     <br>
     <h1>Products</h1>
       <tbody *ngFor="let p of product.product">
@@ -42,7 +42,7 @@
         <td>{{p.companyName}}</td>
         <td>{{p.priceOfProduct}}</td>
         <td>{{p.quantity}}</td>
-        <td><button mat-button (click)="editProduct(p.id)" style="float: right; width: 2em; text-align: center; ">update</button></td>
-        <td><button mat-button (click)="deleteProduct(p.id)" style="float: right; width: 1em; text-align: center; color: maroon; font-weight: bolder">x</button></td>
+        <td><button mat-button (click)="editProduct(p.id)" style="float: right; width: em; text-align: center; ">Update</button></td>
+        <td><button mat-button (click)="deleteProduct(p.id)" style="float: right; width: 1em; text-align: center; font-weight: bolder">Delete</button></td>
       </tbody>
   </div>
