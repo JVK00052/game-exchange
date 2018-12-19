@@ -9,8 +9,8 @@ import { ShopComponent } from './components/shop/shop.component';
 import { AddProductComponent } from './components/addproduct/addproduct.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
-import { ProfileComponent, CCDialog, AccountDialog } from './components/profile/profile.component';
-import { CartComponent, CartDialog } from './components/cart/cart.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CartComponent } from './components/cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component'
@@ -21,6 +21,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { ShopService } from './services/shop.service';
 import { CommonModule } from '@angular/common';
 import { UpdateShopComponent } from './components/updateshop/updateshop.component';
+import { AddpaymentComponent } from './components/addpayment/addpayment.component';
+import { UpdatePaymentComponent } from './components/updatepayment/updatepayment.component';
 
 
 @NgModule({
@@ -36,11 +38,8 @@ import { UpdateShopComponent } from './components/updateshop/updateshop.componen
     CartComponent,
     LoginComponent,
     SignupComponent,
-    CartDialog,
-    CCDialog,
-    AccountDialog,
-    // AddDialog,
-    // EditDialog
+    AddpaymentComponent,
+    UpdatePaymentComponent,
   ],
   imports: [
     HttpClientModule,
@@ -60,13 +59,10 @@ import { UpdateShopComponent } from './components/updateshop/updateshop.componen
     ShopService,
   ],
   entryComponents: [
-    CartDialog,
-    CCDialog,
-    AccountDialog,
     AddProductComponent,
     UpdateShopComponent, 
-    // AddDialog,
-    // EditDialog
+    AddpaymentComponent,
+    UpdatePaymentComponent
   ],
   bootstrap: [AppComponent]
 })

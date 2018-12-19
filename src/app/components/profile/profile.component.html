@@ -31,7 +31,7 @@
   </nav>
 </header>
 
-<aside class="profile-card">
+<!-- <aside class="profile-card">
   <form action="" method="get" class="form-example">
     <div class="form-example">
       <label for="name">Name: </label>
@@ -54,29 +54,29 @@
     </div>
     <br />
   </form>
-</aside>
+</aside> -->
 
 <body>
-  <button mat-raised-button [matMenuTriggerFor]="profile">Account/Payment</button>
+  <button mat-raised-button [matMenuTriggerFor]="profile">Payment</button>
 
   <mat-menu #info="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
+    <!-- <button mat-menu-item [matMenuTriggerFor]="account">Account</button> -->
     <button mat-menu-item [matMenuTriggerFor]="payment">Payment</button>
   </mat-menu>
 
   <mat-menu #profile="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="account">Account</button>
+    <!-- <button mat-menu-item [matMenuTriggerFor]="account">Account</button> -->
     <button mat-menu-item [matMenuTriggerFor]="payment">Payment Options</button>
   </mat-menu>
 
-  <mat-menu #account="matMenu">
+  <!-- <mat-menu #account="matMenu">
     <button mat-menu-item (click)="openDialog()">Add Info</button>
     <button mat-menu-item (click)="openDialog()">Edit Info</button>
-  </mat-menu>
+  </mat-menu> -->
 
   <mat-menu #payment="matMenu">
     <button mat-menu-item (click)="createDialog()">Add Payment</button>
     <button mat-menu-item (click)="createDialog()">Edit Payment</button>
-    <button mat-menu-item (click)="createDialog()">View Payment</button>
+    <button mat-menu-item (click)="createDialog()">Delete</button>
   </mat-menu>
 </body>
