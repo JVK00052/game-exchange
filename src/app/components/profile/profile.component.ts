@@ -14,12 +14,14 @@ import { UpdatePaymentComponent} from '../updatepayment/updatepayment.component'
 
 export class ProfileComponent implements OnInit {
 
+
   currentUser: any = JSON.parse(localStorage.getItem('currentUser')) || '';
   payment: any = [];
   isAdminVar: any;
   tokenVar: any;
 
   constructor(public dialog: MatDialog, private router: Router, private paymentservice: PaymentService) { } 
+
 
   ngOnInit() {
 
