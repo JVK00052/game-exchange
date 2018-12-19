@@ -22,14 +22,16 @@ export class ShopService {
   getProduct(product: any): Observable<Product[]> {
     return this.http.get<Product[]>(`${APIURL}/product/getall`, httpOptions)
   }
+  
   deleteProduct(id: any): Observable<Product> {
     return this.http.delete<Product>(`${APIURL}/product/delete/${id}`, httpOptions)
   }
+
   editProduct(id: any): Observable<Product> {
     return this.http.put<Product>(`${APIURL}/product/edit/${id}`, httpOptions)
   }
+
   createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
     return this.http.post<any>(`${APIURL}/product/createnew`, {product: {nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity}})
-    console.log('clicked')
   }
 }
