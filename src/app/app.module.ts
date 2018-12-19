@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ShopComponent, AddDialog, EditDialog } from './components/shop/shop.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
-import { ProfileComponent, CCDialog, AccountDialog } from './components/profile/profile.component';
+import { ProfileComponent, CCDialog, AccountDialog, CCeditDialog } from './components/profile/profile.component';
 import { CartComponent, CartDialog } from './components/cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './components/login/login.component';
@@ -35,7 +35,8 @@ import { CommonModule } from '@angular/common';
     CCDialog,
     AccountDialog,
     AddDialog,
-    EditDialog
+    EditDialog,
+    CCeditDialog
   ],
   imports: [
     HttpClientModule,
@@ -59,7 +60,8 @@ import { CommonModule } from '@angular/common';
     CCDialog,
     AccountDialog, 
     AddDialog,
-    EditDialog
+    EditDialog, 
+    CCeditDialog
   ],
   bootstrap: [AppComponent]
 })
