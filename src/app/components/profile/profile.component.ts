@@ -15,11 +15,10 @@ export interface DialogData { }
 })
 
 export class ProfileComponent implements OnInit {
-
   profile: any = [];
   payment: any = [];
+  
   tokenVar: any;
-
   constructor(public dialog: MatDialog, private router: Router, private profileservice: ProfileService, private paymentservice: PaymentService) { }
 
   openDialog() {

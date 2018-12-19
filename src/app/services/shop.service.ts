@@ -32,6 +32,7 @@ export class ShopService {
   }
 
   createProduct(nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity) {
-    return this.http.post<any>(`${APIURL}/product/createnew`, {product: {nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity}})
+    return this.http.post<any>(`${APIURL}/product/createnew`, { product: { nameOfProduct, typeOfProduct, companyName, priceOfProduct, quantity } })
+    console.log('clicked')
   }
 }
