@@ -38,12 +38,8 @@ export class ShopService {
         this.getProducts(productid);
       })
   }
-  // editProduct(product: any, id:any) { 
-  //   return this.http.put<Product>(`${APIURL}/product/edit/${id}`, {product}, httpOptions)
-  // }
+ 
   createProduct(product: any) {
     return this.http.post<any>(`${APIURL}/product/createnew`, {product}, httpOptions)
-    console.log('clicked')
-
   }
 }

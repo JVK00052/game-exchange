@@ -24,10 +24,13 @@ export class PaymentService {
   deletepayment(id: any): Observable<Payment> {
     return this.http.delete<Payment>(`${APIURL}/payment/delete/${id}`, httpOptions)
   }
-  editpayment(id: any): Observable<Payment> {
-    return this.http.put<Payment>(`${APIURL}/payment/edit/${id}`, httpOptions)
+  editpayment(payment: any, paymentid: any) {
+    return this.http.put(`${APIURL}/payment/edit/${paymentid}`, {payment}, httpOptions)
+    .subscribe(() => {
+      this.getpayment(paymentid)
+    })
   }
-  createpayment(nameOfCompany, cardNumber, cardVerification, expirationDate, cardOwner,) {
-    return this.http.post<any>(`${APIURL}/payment/createnew`, { payment: {  nameOfCompany, cardNumber, cardVerification, expirationDate, cardOwner, } })
+  createpayment(payment: any) {
+    return this.http.post<any>(`${APIURL}/payment/createnew`, {payment}, httpOptions)
   }
 }
