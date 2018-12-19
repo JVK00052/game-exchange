@@ -16,7 +16,8 @@ const httpOptions = {
 })
 
 export class ShopService {
-
+  products: Product[];
+  private url =`${APIURL}`
   constructor(private http: HttpClient) { }
 
   getProducts(id: number): Observable<Product[]> {

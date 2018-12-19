@@ -98,6 +98,7 @@
       <button mat-menu-item (click)="openDialog()">Add Product</button>
     </mat-menu>
   </div>
+
   <div class="deck">
     <mat-card class="card" *ngFor="let p of product.product">
       <mat-card-actions class="adminbuttons">
@@ -116,6 +117,7 @@
           <div class="quantity">
             {{p.quantity}}
           </div>
+
         </div>
       </mat-card-content>
       <mat-card-actions>
