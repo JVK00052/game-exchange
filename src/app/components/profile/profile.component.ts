@@ -1,12 +1,10 @@
 import { Inject, OnInit, Component } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
-import { Router } from '@angular/router';
-import { Profile } from '../../models/profile';
-import { ProfileService } from '../../services/profile.service';
-import { Payment } from '../../models/payment';;
+import { MatDialog } from '@angular/material';
 import { PaymentService } from '../../services/payment.service';
-
-export interface DialogData { }
+import { Payment } from '../../models/payment';;
+import { Router } from '@angular/router';
+import { AddPaymentComponent } from '../addpayment/addpayment.component';
+import { UpdatePaymentComponent} from '../updatepayment/updatepayment.component';
 
 @Component({
   selector: 'app-profile',
@@ -16,69 +14,28 @@ export interface DialogData { }
 
 export class ProfileComponent implements OnInit {
 
-  profile: any = [];
+  currentUser: any = JSON.parse(localStorage.getItem('currentUser')) || '';
   payment: any = [];
+  isAdminVar: any;
   tokenVar: any;
 
-  constructor(public dialog: MatDialog, private router: Router, private profileservice: ProfileService, private paymentservice: PaymentService) { }
-
-  openDialog() {
-    this.dialog.open(AccountDialog, {
-      disableClose: true,
-      panelClass: 'full-dialog'
-    });
-  }
-
-  createDialog() {
-    this.dialog.open(CCDialog, {
-      disableClose: true,
-      panelClass: 'full-dialog'
-    });
-  }
-
-  editDialog() {
-    this.dialog.open(CCeditDialog, {
-      disableClose: true,
-      panelClass: 'full-dialog'
-    });
-  }
+  constructor(public dialog: MatDialog, private router: Router, private paymentservice: PaymentService) { } 
 
   ngOnInit() {
-    this.getprofile();
+
+    this.getpayment();
+
+    if (localStorage.getItem("isAdmin") == "true") {
+      this.isAdminVar = true
+    } else {
+      this.isAdminVar = false
+    }
 
     if (localStorage.getItem('token') == null) {
       this.tokenVar = false
     } else {
       this.tokenVar = true
     }
-  }
-
-  getprofile() {
-    this.profile = [];
-    this.profileservice.getprofile(this.profile.id).subscribe((data: any) => {
-      console.log(data)
-      this.profile = data
-    })
-  }
-
-  deleteprofile(profile: Profile): void {
-    if (localStorage.getItem('token')) {
-      this.profileservice.deleteprofile(profile).subscribe((profile: any) => console.log(profile))
-      this.getprofile();
-    } else {
-      console.log('Not an authorized user.')
-    }
-  }
-  
-  editprofile(profile: Profile): void {
-    if (localStorage.getItem('token')) {
-      this.profileservice.editprofile(profile).subscribe((profile: Profile) => console.log(profile))
-      this.getprofile();
-    }
-  }
-
-  createprofile(owner, firstName, lastName, screenName, email, phoneNumber) {
-    this.profileservice.createprofile(owner, firstName, lastName, screenName, email, phoneNumber).subscribe((profile: Profile) => console.log(profile))
   }
 
   getpayment() {
@@ -88,6 +45,19 @@ export class ProfileComponent implements OnInit {
       this.payment = data
     })
   }
+
+  openDialog() {
+    this.dialog.open(AddPaymentComponent);
+  }
+
+  editpayment(payment) {
+    this.dialog.open(UpdatePaymentComponent, {
+      data: payment
+
+    });
+    console.log(payment);
+  }
+
   deletepayment(payment: Payment): void {
     if (localStorage.getItem('token')) {
       this.paymentservice.deletepayment(payment).subscribe((payment: any) => console.log(payment))
@@ -96,16 +66,6 @@ export class ProfileComponent implements OnInit {
       console.log('Not an authorized user.')
     }
   }
-  editpayment(payment: Payment): void {
-    if (localStorage.getItem('token')) {
-      this.paymentservice.editpayment(payment).subscribe((payment: Payment) => console.log(payment))
-      this.getpayment();
-    }
-  }
-
-  createpayment(nameOfCompany, cardNumber, cardVerification, expirationDate, cardOwner) {
-    this.paymentservice.createpayment(nameOfCompany, cardNumber, cardVerification, expirationDate, cardOwner).subscribe((payment: Payment) => console.log(payment))
-  }
 
   logout() {
     localStorage.removeItem('token');
@@ -113,39 +73,5 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['/']);
     window.alert('You have been logged out.')
   }
-
-}
-@Component({
-  selector: 'profile-dialog',
-  templateUrl: './profile-dialog.html',
-  styleUrls: ['./profile.component.css']
-})
-
-export class CCDialog {
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
-
-  }
-}
-
-@Component({
-  selector: 'account.dialog',
-  templateUrl: './account.dialog.html',
-  styleUrls: ['./profile.component.css']
-})
-
-export class AccountDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-
-}
-
-@Component({
-  selector: 'ccedit-dialog',
-  templateUrl: './ccedit-dialog.html',
-  styleUrls: ['./profile.component.css']
-})
-
-export class CCeditDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
 }

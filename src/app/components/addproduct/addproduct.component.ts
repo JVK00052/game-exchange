@@ -5,7 +5,6 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 import { ShopService } from '../../services/shop.service';
 
 
-
 @Component({
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
