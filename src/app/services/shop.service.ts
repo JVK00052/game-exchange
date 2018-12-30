@@ -33,7 +33,7 @@ export class ShopService {
 
 
   editProduct(product: any, productid: any) {
-    return this.http.put(`${APIURL}/product/edit/${productid}`, {product}, httpOptions)
+    return this.http.put(`${APIURL}/product/edit/${productid}`, product, httpOptions)
       .subscribe(() => {
         this.getProducts(productid);
       })

@@ -36,7 +36,7 @@ export class AddPaymentComponent implements OnInit {
 
   onSubmit() {
     console.log(this.createPaymentForm.value)
-    this.PaymentService.createpayment(this.createPaymentForm.value).subscribe(res => {
+    this.PaymentService.createPayment(this.createPaymentForm.value).subscribe(res => {
       console.log(res)
     });
     this.matDialogRef.close();

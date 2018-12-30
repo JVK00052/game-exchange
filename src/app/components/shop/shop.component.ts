@@ -19,7 +19,7 @@ export class ShopComponent implements OnInit {
   isAdminVar: any;
   tokenVar: any;
 
-  constructor(private dialog: MatDialog, private shopservice: ShopService, private router: Router) { }
+  constructor(private dialog: MatDialog, private router: Router, private shopservice: ShopService,) { }
 
   ngOnInit() {
 

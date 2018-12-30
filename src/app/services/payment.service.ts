@@ -34,7 +34,7 @@ export class PaymentService {
       this.getPayment(paymentid)
     })
   }
-  createpayment(payment: any) {
+  createPayment(payment: any) {
     return this.http.post<any>(`${APIURL}/payment/createnew`, {payment}, httpOptions)
   }
 }
