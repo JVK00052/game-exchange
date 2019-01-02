@@ -10,7 +10,7 @@ import { AddProductComponent } from './components/addproduct/addproduct.componen
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpFaqComponent } from './components/help-faq/help-faq.component';
 import { ProfileComponent} from './components/profile/profile.component';
-import { CartComponent, CartDialog } from './components/cart/cart.component';
+import { CartComponent } from './components/cart/cart.component';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component'
@@ -38,11 +38,8 @@ import { UpdatePaymentComponent } from './components/updatepayment/updatepayment
     CartComponent,
     LoginComponent,
     SignupComponent,
-    CartDialog,
-    UpdatePaymentComponent,
     AddPaymentComponent,
-    // AddDialog,
-    // EditDialog
+    UpdatePaymentComponent,
 
   ],
   imports: [
@@ -55,7 +52,6 @@ import { UpdatePaymentComponent } from './components/updatepayment/updatepayment
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-
     CommonModule,
     ReactiveFormsModule
 
@@ -67,14 +63,10 @@ import { UpdatePaymentComponent } from './components/updatepayment/updatepayment
     ShopService
   ],
   entryComponents: [
-    CartDialog,
     AddPaymentComponent,
     UpdatePaymentComponent,
     AddProductComponent,
     UpdateShopComponent,
-    // AddDialog,
-    // EditDialog
-
   ],
   bootstrap: [AppComponent]
 })

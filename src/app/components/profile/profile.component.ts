@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit {
 
   getpayment() {
     this.payment = [];
-    this.paymentservice.getpayment(this.payment.id).subscribe((data: any) => {
+    this.paymentservice.getPayment(this.payment.id).subscribe((data: any) => {
       console.log(data)
       this.payment = data
     })
@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
 
   deletepayment(payment: Payment): void {
     if (localStorage.getItem('token')) {
-      this.paymentservice.deletepayment(payment).subscribe((payment: any) => console.log(payment))
+      this.paymentservice.deletePayment(payment).subscribe((payment: any) => console.log(payment))
       this.getpayment();
     } else {
       console.log('Not an authorized user.')
