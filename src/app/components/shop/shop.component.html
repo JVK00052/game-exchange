@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <nav>
     <ul class="nav nav-pills nav-fill">
       <li class="nav-item">
@@ -45,4 +45,83 @@
         <td><button mat-button (click)="editProduct(p.id)" style="float: right; width: 2em; text-align: center; ">update</button></td>
         <td><button mat-button (click)="deleteProduct(p.id)" style="float: right; width: 1em; text-align: center; color: maroon; font-weight: bolder">x</button></td>
       </tbody>
+  </div> -->
+  <header>
+    <nav>
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/shop">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/help">Help/FAQ</a>
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup">Signup</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenVar">
+          <button mat-raised-button (click)='logout()' class="nav-link">Logout</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- <div class="container">
+    <button class="navButton" mat-fab="accent" (click)="openDialog()">ADD</button>
+    <br>
+    <h1>Products</h1>
+    <tbody *ngFor="let p of product.product">
+      <td>{{p.nameOfProduct}}</td>
+      <td>{{p.typeOfProduct}}</td>
+      <td>{{p.companyName}}</td>
+      <td>{{p.priceOfProduct}}</td>
+      <td>{{p.quantity}}</td>
+      <td><button mat-button (click)="editProduct(p.id)" style="float: right; width: 2em; text-align: center; ">update</button></td>
+      <td><button mat-button (click)="deleteProduct(p.id)" style="float: right; width: 1em; text-align: center; color: maroon; font-weight: bolder">x</button></td>
+    </tbody>
+  </div> -->
+  <div class="admin-use" *ngIf="isAdminVar">
+    <button mat-raised-button [matMenuTriggerFor]="menu">Admin Options</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openDialog()">Add Product</button>
+    </mat-menu>
+  </div>
+
+  <div class="deck">
+    <mat-card class="card" *ngFor="let p of product.product">
+      <mat-card-actions class="adminbuttons">
+        <button mat-menu-item (click)="editProduct(p.id)">Edit</button>
+        <button mat-raised-button class="delete" (click)="deleteProduct(p.id)">Delete</button>
+      </mat-card-actions>
+      <mat-card-header>
+        <mat-card-title>{{p.nameOfProduct}} {{p.typeOfProduct}}</mat-card-title>
+        <mat-card-subtitle>{{p.companyName}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="priceandquantity">
+          <div class="price">
+            {{p.priceOfProduct}}
+          </div>
+          <div class="quantity">
+            {{p.quantity}}
+          </div>
+
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="cartbutton">Add to Cart</button>
+      </mat-card-actions>
+    </mat-card>
   </div>

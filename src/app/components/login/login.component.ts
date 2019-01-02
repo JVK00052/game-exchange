@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
 
   users = [];
   error = '';
+  username: string;
+  password: string;
   isAdmin = false;
 
   constructor(private router: Router, private userservice: UserService, private http: HttpClient) { }
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login(username, password, isAdmin) {
+  public login(username, password, isAdmin) {
     this.userservice.login(username, password, isAdmin)
     .subscribe(
       data => {
