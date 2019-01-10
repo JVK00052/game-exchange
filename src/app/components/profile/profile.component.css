@@ -147,3 +147,20 @@ label {
 .dialogButtons {
   text-align: center;
 }
+
+.deck {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.card {  
+  max-width: 400px;
+  display: inline-block;
+  margin: 1em 1em 1em 1em;
+  background-color: rgba(228,208,181, 0.7);
+  color: black;
+}
+
+.cardNumber{
+  color: white;
+}

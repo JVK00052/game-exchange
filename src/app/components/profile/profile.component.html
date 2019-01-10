@@ -5,7 +5,7 @@
         <a class="nav-link" routerLink="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" routerLink="/shop">Shop</a>
+        <a class="nav-link" routerLink="/shop">Shop</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/contact">Contact Us</a>
@@ -16,7 +16,7 @@
       <li class="nav-item">
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/profile">Profile</a>
+        <a class="nav-link active" routerLink="/profile">Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/cart">Cart</a>
@@ -32,16 +32,35 @@
 </header>
 
 <div class="container">
-    <button class="navButton" mat-fab="accent" (click)="openDialog()">ADD</button>
+    <button mat-raised-button class="add" (click)="openDialog()" style="float: right;">ADD</button>
     <br>
-    <h1>Payment</h1>
-      <tbody *ngFor="let p of payment.payment">
-        <td>{{p.nameOfCompany}}</td>
-        <td>{{p.cardNumber}}</td>
-        <td>{{p.cardVerification}}</td>
-        <td>{{p.expirationDate}}</td>
-        <td>{{p.cardOwner}}</td>
-        <td><button mat-button (click)="editpayment(p.id)" style="float: right; width: 2em; text-align: center; ">update</button></td>
-        <td><button mat-button (click)="deletepayment(p.id)" style="float: right; width: 1em; text-align: center; color: maroon; font-weight: bolder">x</button></td>
-      </tbody>
-  </div>
+<div class="deck">
+    <mat-card class="card" *ngFor="let p of payment.payment">
+      <mat-card-actions class="userbuttons">
+        <br/>
+      </mat-card-actions>
+      <mat-card-header>
+        <mat-card-title>{{p.nameOfCompany}}</mat-card-title>
+        <mat-card-title>{{p.cardNumber}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="cvc-expiration">
+          <div class="cvc"> CVC:
+            {{p.cardVerification}}
+          </div>
+          <br/>
+          <div class="expiration"> Exp. Date:
+            {{p.expirationDate}}
+          </div>
+          <br/>
+          <div class="owner"> Card Owner:
+            {{p.cardOwner}}
+          </div>
+          <br/>
+        <button mat-button (click)="editpayment(p.id)" style="float: right; width: 2em; text-align: center; ">Update</button>
+        <button mat-button (click)="deletepayment(p.id)" style="float: right; width: 1em; text-align: center; color: maroon; font-weight: bolder">Delete</button>
+
+        </div>
+      </mat-card-content>
+      </mat-card>
+      </div>
